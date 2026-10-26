@@ -1,0 +1,341 @@
+{
+  "repository": "git@github.com:zhangbaozhe/pivopt.git",
+  "commit": "94f7c1cd249d4c4fd1d3d64423971e8c786f551a",
+  "files": [
+    {
+      "source": "examples/__init__.py",
+      "destination": "examples/__init__.py",
+      "source_sha256": "4d64df58c421d30cd832585d151af80f04162c661d71b1bbd695df99e663a027"
+    },
+    {
+      "source": "examples/arm.py",
+      "destination": "examples/arm.py",
+      "source_sha256": "b629b5aeef9710bfc849f6168ea15ee178cf686eff7868013281695924167228"
+    },
+    {
+      "source": "examples/assets/Universal_Robots_ROS2_Description-LICENSE",
+      "destination": "examples/assets/Universal_Robots_ROS2_Description-LICENSE",
+      "source_sha256": "7df94feb097aca12fea3ad8410c783c930ffb35ac91783accd4e3d55dae4f322"
+    },
+    {
+      "source": "examples/assets/ur5e.urdf",
+      "destination": "examples/assets/ur5e.urdf",
+      "source_sha256": "d9de8cfe0d603155404a7924e2e63bd8d853ffba5882356ef1abf7bf49753faf"
+    },
+    {
+      "source": "examples/constraints.py",
+      "destination": "examples/constraints.py",
+      "source_sha256": "ad66d1439d4c6afdc4341e87ce63aa88b357f0f77167e1414cce5570179048a3"
+    },
+    {
+      "source": "examples/cpu_explain.py",
+      "destination": "examples/cpu_explain.py",
+      "source_sha256": "b1b88e9ce6bf2af2d42e50ea9b30113066aacd5e0b4512c09c2cb787a88f7140"
+    },
+    {
+      "source": "examples/cpu_gate_certified_training.py",
+      "destination": "examples/cpu_gate_certified_training.py",
+      "source_sha256": "cf601eb4d26cc7a67f7d4d063593df0f3097bfb23281c2fcc870734fdc3f51ed"
+    },
+    {
+      "source": "examples/cpu_gate_probe.py",
+      "destination": "examples/cpu_gate_probe.py",
+      "source_sha256": "0d57f049698520218996cfde57515d2e5c3afe1101c7acc8a9e57a3e064814b9"
+    },
+    {
+      "source": "examples/cpu_gate_robust_report.py",
+      "destination": "examples/cpu_gate_robust_report.py",
+      "source_sha256": "dbfce0a2d437492c86155074edcd5d7e7e77fbf6dc364efb6110024be345897e"
+    },
+    {
+      "source": "examples/cpu_gate_robust_search.py",
+      "destination": "examples/cpu_gate_robust_search.py",
+      "source_sha256": "d415d6c3631c4ce7ade439aec9d6d1be97e8577c8556dcba18dc3e9a84548dc1"
+    },
+    {
+      "source": "examples/cpu_gate_training.py",
+      "destination": "examples/cpu_gate_training.py",
+      "source_sha256": "e53ac53449f66b4e6ea5c543f939e8cb201946e08dec6361603406dcc64ecd12"
+    },
+    {
+      "source": "examples/cpu_plan_shapes.py",
+      "destination": "examples/cpu_plan_shapes.py",
+      "source_sha256": "0d3f83007f175f7d50651e9b57f352281ce4ef88adc8368521fddfb57abb652b"
+    },
+    {
+      "source": "examples/cpu_polytope_training.py",
+      "destination": "examples/cpu_polytope_training.py",
+      "source_sha256": "c25adceeaded663250c0d69cc342f98879d668ed65f80d4cd818b6d5b6708581"
+    },
+    {
+      "source": "examples/cpu_training.py",
+      "destination": "examples/cpu_training.py",
+      "source_sha256": "a64ffc7288d0767fdd7c74a88b3fea454adb1f24b13a9b981c7359bf50129683"
+    },
+    {
+      "source": "examples/cpu_xyz_yaw.py",
+      "destination": "examples/cpu_xyz_yaw.py",
+      "source_sha256": "d7c5791bcae279b6286424a1438f72adbff1e53978e096d71ac76170d011cbbe"
+    },
+    {
+      "source": "examples/jax_solve.py",
+      "destination": "examples/jax_solve.py",
+      "source_sha256": "7877d71c663b3a324b2ff599a0fe772793988744c71b2fb695829e0fa9712ea8"
+    },
+    {
+      "source": "examples/mujoco/README.md",
+      "destination": "examples/mujoco/README.md",
+      "source_sha256": "1e2ab1d00e08bde9a8dd8c3c6064fca7a45863887d640ef7cc095edae3a8f4dc"
+    },
+    {
+      "source": "examples/mujoco/arm.py",
+      "destination": "examples/mujoco/arm.py",
+      "source_sha256": "bbe25fd5fcae93a56364d8dfe782f6c08c65ab4a9d49ba5ba4ba67ffed177bf3"
+    },
+    {
+      "source": "examples/mujoco/assets/PX4-LICENSE",
+      "destination": "examples/mujoco/assets/PX4-LICENSE",
+      "source_sha256": "5e861a29843c7b94981336dd319ea9e7c0c034eff2bbd2828a2299a65d760d4c"
+    },
+    {
+      "source": "examples/mujoco/assets/SOURCES.md",
+      "destination": "examples/mujoco/assets/SOURCES.md",
+      "source_sha256": "79e7f4aac93f8a2919a7d453fe2ef7e830d9129a80b51e22f154054d46d4d16e"
+    },
+    {
+      "source": "examples/mujoco/assets/planar_base.xml",
+      "destination": "examples/mujoco/assets/planar_base.xml",
+      "source_sha256": "574c7cead8fe66e2e8d9637ffc849c4785a7a4a12b034a3744e273baecd71dbb"
+    },
+    {
+      "source": "examples/mujoco/assets/skydio_x2/LICENSE",
+      "destination": "examples/mujoco/assets/skydio_x2/LICENSE",
+      "source_sha256": "d42cae9a0f292b7a713597ba26e1e1e23d50df906c488f0d36fd3538af200bc1"
+    },
+    {
+      "source": "examples/mujoco/assets/skydio_x2/assets/X2_lowpoly.obj",
+      "destination": "examples/mujoco/assets/skydio_x2/assets/X2_lowpoly.obj",
+      "source_sha256": "4d6df3d7b26676a6ade8cbc320599961321ac3e3c52474d7c98dd7adc8152411"
+    },
+    {
+      "source": "examples/mujoco/assets/skydio_x2/assets/X2_lowpoly_texture_SpinningProps_1024.png",
+      "destination": "examples/mujoco/assets/skydio_x2/assets/X2_lowpoly_texture_SpinningProps_1024.png",
+      "source_sha256": "24153733dd01f9ddd37a3c79fad5e24ac876228812e3a8e95f60ccd8cedb66e1"
+    },
+    {
+      "source": "examples/mujoco/assets/skydio_x2/x2.xml",
+      "destination": "examples/mujoco/assets/skydio_x2/x2.xml",
+      "source_sha256": "5e8f14afe735d07e0b299444d68927058a757149761313c2f0d2f88264c2ae7b"
+    },
+    {
+      "source": "examples/mujoco/assets/unicycle.xml",
+      "destination": "examples/mujoco/assets/unicycle.xml",
+      "source_sha256": "6fa04769334cc8ba13de0e54bcde92a46a49d0376e969000fc83aaaf169e5a45"
+    },
+    {
+      "source": "examples/mujoco/assets/upstream.json",
+      "destination": "examples/mujoco/assets/upstream.json",
+      "source_sha256": "84b2ca33c7b9ce664ff61991d2858d106e5216156b6bcf659a429ddf0f77c2b3"
+    },
+    {
+      "source": "examples/mujoco/assets/ur5e/LICENSE",
+      "destination": "examples/mujoco/assets/ur5e/LICENSE",
+      "source_sha256": "5ec71ccf66c8d03261448f2441a586765b97f2248c860a1ae19689fb1c45cee6"
+    },
+    {
+      "source": "examples/mujoco/assets/ur5e/assets/base_0.obj",
+      "destination": "examples/mujoco/assets/ur5e/assets/base_0.obj",
+      "source_sha256": "9a3b21f1524baef6af8a52d7af90b6e94b79f7e3c2b04a0f6581f74d22291b0b"
+    },
+    {
+      "source": "examples/mujoco/assets/ur5e/assets/base_1.obj",
+      "destination": "examples/mujoco/assets/ur5e/assets/base_1.obj",
+      "source_sha256": "cf7d54691a2c1eeda280955ebd6bd83c2dbecfc46fb53c10198f05d107511b50"
+    },
+    {
+      "source": "examples/mujoco/assets/ur5e/assets/forearm_0.obj",
+      "destination": "examples/mujoco/assets/ur5e/assets/forearm_0.obj",
+      "source_sha256": "64c049a55149c2ab355594d52302b53d3e34da3677ceaa1917c427cde7743146"
+    },
+    {
+      "source": "examples/mujoco/assets/ur5e/assets/forearm_1.obj",
+      "destination": "examples/mujoco/assets/ur5e/assets/forearm_1.obj",
+      "source_sha256": "a96fe203015cf532b193f414cd01268c7c36795e51a837dd33afd122334f81f2"
+    },
+    {
+      "source": "examples/mujoco/assets/ur5e/assets/forearm_2.obj",
+      "destination": "examples/mujoco/assets/ur5e/assets/forearm_2.obj",
+      "source_sha256": "05b436505fc595aeab26675590c2b56b88a65b2d52d6352096fed9f07cb4c4ca"
+    },
+    {
+      "source": "examples/mujoco/assets/ur5e/assets/forearm_3.obj",
+      "destination": "examples/mujoco/assets/ur5e/assets/forearm_3.obj",
+      "source_sha256": "fa31af19cfad7a765b62e8a2d5931cb014b88de84195a7850b4e5ee902112e9a"
+    },
+    {
+      "source": "examples/mujoco/assets/ur5e/assets/shoulder_0.obj",
+      "destination": "examples/mujoco/assets/ur5e/assets/shoulder_0.obj",
+      "source_sha256": "477387a7e7312782a6040484a3c2c2fcee33f40109f419076e31b6f6e1692c68"
+    },
+    {
+      "source": "examples/mujoco/assets/ur5e/assets/shoulder_1.obj",
+      "destination": "examples/mujoco/assets/ur5e/assets/shoulder_1.obj",
+      "source_sha256": "8537bba02804640ddf6e260f79fe66e895b3229ed3d44298a95e8e027eb5d435"
+    },
+    {
+      "source": "examples/mujoco/assets/ur5e/assets/shoulder_2.obj",
+      "destination": "examples/mujoco/assets/ur5e/assets/shoulder_2.obj",
+      "source_sha256": "291714518416bb8f0bafbf123867db011ecbf5146a05245ca5893ee8c57d4e21"
+    },
+    {
+      "source": "examples/mujoco/assets/ur5e/assets/upperarm_0.obj",
+      "destination": "examples/mujoco/assets/ur5e/assets/upperarm_0.obj",
+      "source_sha256": "14143d4f1175a7dbacc8e2f2f98f1cac5a2b2e238cd46cd03654d31f2610eb53"
+    },
+    {
+      "source": "examples/mujoco/assets/ur5e/assets/upperarm_1.obj",
+      "destination": "examples/mujoco/assets/ur5e/assets/upperarm_1.obj",
+      "source_sha256": "272899e927f4a32b7c25e34560ec70654c0346cc8ed1c616c0555f3f53b32d14"
+    },
+    {
+      "source": "examples/mujoco/assets/ur5e/assets/upperarm_2.obj",
+      "destination": "examples/mujoco/assets/ur5e/assets/upperarm_2.obj",
+      "source_sha256": "86c05350d60eb0e7e28a81b544267478b7db997baba41cef19088ebbeffecfa1"
+    },
+    {
+      "source": "examples/mujoco/assets/ur5e/assets/upperarm_3.obj",
+      "destination": "examples/mujoco/assets/ur5e/assets/upperarm_3.obj",
+      "source_sha256": "b257dab441e6fab64ea03b4b87029d8a96554ad1a513cce944d56acba0ad948a"
+    },
+    {
+      "source": "examples/mujoco/assets/ur5e/assets/wrist1_0.obj",
+      "destination": "examples/mujoco/assets/ur5e/assets/wrist1_0.obj",
+      "source_sha256": "7ef0c59b5c5d56a9902435c9a058b27d2a38c85fe2bae02d00a9284dd1f4d519"
+    },
+    {
+      "source": "examples/mujoco/assets/ur5e/assets/wrist1_1.obj",
+      "destination": "examples/mujoco/assets/ur5e/assets/wrist1_1.obj",
+      "source_sha256": "ee6d5c562e6becef94109b0543329080d285d1aef521a01ed98e18a5bf1e8684"
+    },
+    {
+      "source": "examples/mujoco/assets/ur5e/assets/wrist1_2.obj",
+      "destination": "examples/mujoco/assets/ur5e/assets/wrist1_2.obj",
+      "source_sha256": "88c66dc64f15391287147d50add37729a3f41dadd80b1f859cf2cb6d45daf32a"
+    },
+    {
+      "source": "examples/mujoco/assets/ur5e/assets/wrist2_0.obj",
+      "destination": "examples/mujoco/assets/ur5e/assets/wrist2_0.obj",
+      "source_sha256": "2ac2e2e39d8f7005bc3b3ab26cd61634be2e14930074615da5318b9ee7c569a8"
+    },
+    {
+      "source": "examples/mujoco/assets/ur5e/assets/wrist2_1.obj",
+      "destination": "examples/mujoco/assets/ur5e/assets/wrist2_1.obj",
+      "source_sha256": "a721d06dc61d3b3a8ec58c035c9e3358ed30d6991a72e077d8abf3c3c203b633"
+    },
+    {
+      "source": "examples/mujoco/assets/ur5e/assets/wrist2_2.obj",
+      "destination": "examples/mujoco/assets/ur5e/assets/wrist2_2.obj",
+      "source_sha256": "6df4335c8bd5e881fda2c224f770115ffe9ddd0cd321ebe3c0a4a310796f0987"
+    },
+    {
+      "source": "examples/mujoco/assets/ur5e/assets/wrist3.obj",
+      "destination": "examples/mujoco/assets/ur5e/assets/wrist3.obj",
+      "source_sha256": "0e51748f9c93bd66604360a5cf7e2e8a6e754550be64076333ff4fc19ec90c61"
+    },
+    {
+      "source": "examples/mujoco/assets/ur5e/ur5e.xml",
+      "destination": "examples/mujoco/assets/ur5e/ur5e.xml",
+      "source_sha256": "ffd0a7b336d3c2d27c35a15cc0d4aaa95196769aca190ac8d6522d3318c345a0"
+    },
+    {
+      "source": "examples/mujoco/common.py",
+      "destination": "examples/mujoco/common.py",
+      "source_sha256": "5b8449ec703b1bdabf1dc193db705f84524718dae95cce08477cc05d19f31538"
+    },
+    {
+      "source": "examples/mujoco/planar_base.py",
+      "destination": "examples/mujoco/planar_base.py",
+      "source_sha256": "0011b6b4b56fc88969c754417f6239f500fbfe962626223650ba39fd5035ea14"
+    },
+    {
+      "source": "examples/mujoco/px4_allocation.py",
+      "destination": "examples/mujoco/px4_allocation.py",
+      "source_sha256": "26bc697e76bed1ece83386b456266314ec6543e9dc5f90a6335733e67181d819"
+    },
+    {
+      "source": "examples/mujoco/quadrotor.py",
+      "destination": "examples/mujoco/quadrotor.py",
+      "source_sha256": "e4af9baaa444b7f0c57da280a64b55be974c56d6d170ac3b6414806ba8a3d5f5"
+    },
+    {
+      "source": "examples/mujoco/trajectory.py",
+      "destination": "examples/mujoco/trajectory.py",
+      "source_sha256": "595a5ff5eeeccc1d12fa783caf04d7b31e9f20dbe911070df816af3092a4ddc2"
+    },
+    {
+      "source": "examples/mujoco/unicycle.py",
+      "destination": "examples/mujoco/unicycle.py",
+      "source_sha256": "a72d8f58cb4e713b274afd874728c66c0e6b069c9acf650b88a9bd4abf2cff15"
+    },
+    {
+      "source": "examples/numpy_solve.py",
+      "destination": "examples/numpy_solve.py",
+      "source_sha256": "f6ffd2c879ef8da34f256ae553d81dc4946dc9249e3ec5a3c39b04342c2e13ee"
+    },
+    {
+      "source": "examples/planar_base.py",
+      "destination": "examples/planar_base.py",
+      "source_sha256": "59d294f8995ffa79ead756a3bd1186bcaeee74b25ffd1f777a54d6a169ed893f"
+    },
+    {
+      "source": "examples/torch_solve.py",
+      "destination": "examples/torch_solve.py",
+      "source_sha256": "66e4255ad721103be61c34561729b725cdb42576726d44e3c9251765ba557051"
+    },
+    {
+      "source": "examples/trajectory_problem.py",
+      "destination": "examples/trajectory_problem.py",
+      "source_sha256": "dc1fb292b6453d1e3341658de804c69b902badabdf46d6fefcf082bbbc061a17"
+    },
+    {
+      "source": "examples/unicycle.py",
+      "destination": "examples/unicycle.py",
+      "source_sha256": "12ae3ab91d378c9df6f8f55aa9d0af7c415218a5726d48a5a2701d57ab947f99"
+    },
+    {
+      "source": "tests/test_cpu_gate_certified_training_example.py",
+      "destination": "tests/test_cpu_gate_certified_training_example.py",
+      "source_sha256": "173435906af0805c24748daa47a09e1730f2bcd11080c923ce72bf8db009e243"
+    },
+    {
+      "source": "tests/test_constraint_examples.py",
+      "destination": "tests/test_constraint_examples.py",
+      "source_sha256": "6cce8956787ec9b1616eaa5108596fe1afd169d8d532711c397f235c199b3660"
+    },
+    {
+      "source": "tests/test_cpu_training_example.py",
+      "destination": "tests/test_cpu_training_example.py",
+      "source_sha256": "4657aeebdd8392be95bc7e3da020f069155fc12fc202d270eee426d31f8bf90a"
+    },
+    {
+      "source": "tests/test_unicycle_example.py",
+      "destination": "tests/test_unicycle_example.py",
+      "source_sha256": "4c796c1d5254e29e63b7b1b4b0e6700bf58dd5974ed826262932db1856c08f69"
+    },
+    {
+      "source": "tests/test_mujoco_examples.py",
+      "destination": "tests/test_mujoco_examples.py",
+      "source_sha256": "699286d27d5070772318c3b7c23b00e789a644767bf40f00ceeb8ac08b3f0559"
+    },
+    {
+      "source": "tests/fixtures/mujoco/px4_allocation.json",
+      "destination": "tests/fixtures/mujoco/px4_allocation.json",
+      "source_sha256": "619f0aeccf9ad0ad9576d5a036b64c3101643ed4fbb5304db7f43630d0c0182f"
+    },
+    {
+      "source": "tests/pivopt_jax_reference/chain.py",
+      "destination": "tests/reference_chain.py",
+      "source_sha256": "b2d1a1c653269f75c394b08aa076ee79a50286374b5153932c91391102eec11e"
+    }
+  ]
+}

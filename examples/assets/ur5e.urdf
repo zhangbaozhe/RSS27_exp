@@ -1,0 +1,85 @@
+<?xml version="1.0"?>
+<!--
+  Mesh-free UR5e kinematic fixture. Joint transforms and limits follow the
+  default UR5e data in UniversalRobots/Universal_Robots_ROS2_Description
+  (BSD-3-Clause), rolling branch, retrieved 2026-10-14:
+  https://github.com/UniversalRobots/Universal_Robots_ROS2_Description
+  The complete upstream license is preserved in the adjacent
+  Universal_Robots_ROS2_Description-LICENSE file.
+-->
+<robot name="pivopt_ur5e">
+  <link name="base_link"/>
+  <link name="base_link_inertia"/>
+  <link name="shoulder_link"/>
+  <link name="upper_arm_link"/>
+  <link name="forearm_link"/>
+  <link name="wrist_1_link"/>
+  <link name="wrist_2_link"/>
+  <link name="wrist_3_link"/>
+  <link name="flange"/>
+  <link name="tool0"/>
+
+  <joint name="base_link-base_link_inertia" type="fixed">
+    <parent link="base_link"/>
+    <child link="base_link_inertia"/>
+    <origin xyz="0 0 0" rpy="0 0 3.141592653589793"/>
+  </joint>
+  <joint name="shoulder_pan_joint" type="revolute">
+    <parent link="base_link_inertia"/>
+    <child link="shoulder_link"/>
+    <origin xyz="0 0 0.1625" rpy="0 0 0"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="-6.283185307179586" upper="6.283185307179586"
+           velocity="3.141592653589793" effort="150"/>
+  </joint>
+  <joint name="shoulder_lift_joint" type="revolute">
+    <parent link="shoulder_link"/>
+    <child link="upper_arm_link"/>
+    <origin xyz="0 0 0" rpy="1.570796327 0 0"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="-6.283185307179586" upper="6.283185307179586"
+           velocity="3.141592653589793" effort="150"/>
+  </joint>
+  <joint name="elbow_joint" type="revolute">
+    <parent link="upper_arm_link"/>
+    <child link="forearm_link"/>
+    <origin xyz="-0.425 0 0" rpy="0 0 0"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="-3.141592653589793" upper="3.141592653589793"
+           velocity="3.141592653589793" effort="150"/>
+  </joint>
+  <joint name="wrist_1_joint" type="revolute">
+    <parent link="forearm_link"/>
+    <child link="wrist_1_link"/>
+    <origin xyz="-0.3922 0 0.1333" rpy="0 0 0"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="-6.283185307179586" upper="6.283185307179586"
+           velocity="3.141592653589793" effort="28"/>
+  </joint>
+  <joint name="wrist_2_joint" type="revolute">
+    <parent link="wrist_1_link"/>
+    <child link="wrist_2_link"/>
+    <origin xyz="0 -0.0997 -2.044881182297852e-11" rpy="1.570796327 0 0"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="-6.283185307179586" upper="6.283185307179586"
+           velocity="3.141592653589793" effort="28"/>
+  </joint>
+  <joint name="wrist_3_joint" type="revolute">
+    <parent link="wrist_2_link"/>
+    <child link="wrist_3_link"/>
+    <origin xyz="0 0.0996 -2.042830148012698e-11" rpy="1.570796326589793 3.141592653589793 3.141592653589793"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="-6.283185307179586" upper="6.283185307179586"
+           velocity="3.141592653589793" effort="28"/>
+  </joint>
+  <joint name="wrist_3-flange" type="fixed">
+    <parent link="wrist_3_link"/>
+    <child link="flange"/>
+    <origin xyz="0 0 0" rpy="0 -1.5707963267948966 -1.5707963267948966"/>
+  </joint>
+  <joint name="flange-tool0" type="fixed">
+    <parent link="flange"/>
+    <child link="tool0"/>
+    <origin xyz="0 0 0" rpy="1.5707963267948966 0 1.5707963267948966"/>
+  </joint>
+</robot>
