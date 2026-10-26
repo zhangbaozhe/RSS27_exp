@@ -3958,9 +3958,7 @@ def main() -> None:
     gate.add_argument("--trained-checkpoint", type=Path, required=True)
     gate.add_argument("--task", choices=T.TASKS, default="gate2")
     gate.add_argument("--calibration", type=Path)
-    gate.add_argument(
-        "--output-dir", type=Path, default=Path("artifacts/gate2/probes")
-    )
+    gate.add_argument("--output-dir", type=Path, default=Path("artifacts/gate2/probes"))
     gate.add_argument("--scenes", type=int, default=32)
     gate.add_argument("--reference-iterations", type=int, default=2048)
     gate.add_argument("--runs-root", type=Path)

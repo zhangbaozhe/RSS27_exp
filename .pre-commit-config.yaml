@@ -1,0 +1,32 @@
+exclude: ^(artifacts/|\.cache/|\.venv/|build/|dist/)
+
+repos:
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.17.2
+    hooks:
+      # Safe lint fixes run before the formatter.
+      - id: ruff-check
+        args: [--fix]
+        types_or: [python, pyi]
+      - id: ruff-format
+        types_or: [python, pyi]
+
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.6.0
+    hooks:
+      # Preserve vendored assets and installed skill files byte-for-byte.
+      - id: trailing-whitespace
+        args: [--markdown-linebreak-ext=md]
+        exclude: ^(examples/(assets/|mujoco/assets/)|\.agents/|\.claude/)
+      - id: end-of-file-fixer
+        exclude: ^(examples/(assets/|mujoco/assets/)|\.agents/|\.claude/)
+      - id: check-yaml
+      - id: check-toml
+      - id: check-json
+      - id: check-added-large-files
+        # Pinned meshes are checked against their upstream hashes by pytest.
+        exclude: ^uv\.lock$|^examples/mujoco/assets/(ur5e|skydio_x2)/assets/[^/]+\.obj$
+      - id: check-merge-conflict
+      - id: check-case-conflict
+      - id: detect-private-key
+      - id: debug-statements

@@ -1,0 +1,21 @@
+# Keep this version aligned with pyproject.toml and the pre-commit hook.
+required-version = "==0.17.2"
+target-version = "py312"
+line-length = 88
+indent-width = 4
+unsafe-fixes = false
+extend-exclude = ["artifacts", ".cache", "build", "dist", ".agents", ".claude"]
+
+[lint]
+select = ["E4", "E7", "E9", "F", "I"]
+ignore = ["E741"]
+
+[lint.isort]
+# Retain the import grouping used by the migrated examples.
+known-first-party = ["pivopt"]
+
+[format]
+quote-style = "double"
+indent-style = "space"
+line-ending = "auto"
+docstring-code-format = false

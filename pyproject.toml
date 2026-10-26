@@ -17,7 +17,7 @@ dependencies = [
 ]
 
 [dependency-groups]
-dev = ["pytest>=9.0.3", "ruff>=0.15.12"]
+dev = ["pytest>=9.0.3", "ruff==0.17.2", "pre-commit>=4,<5"]
 
 [tool.uv]
 package = false
@@ -40,14 +40,3 @@ explicit = true
 testpaths = ["tests"]
 pythonpath = ["examples", "tests"]
 junit_family = "legacy"
-
-[tool.ruff]
-target-version = "py312"
-
-[tool.ruff.lint]
-select = ["E4", "E7", "E9", "F", "I"]
-ignore = ["E741"]
-
-[tool.ruff.lint.isort]
-# Preserve the upstream import grouping in the copied examples.
-known-first-party = ["pivopt"]

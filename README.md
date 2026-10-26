@@ -25,8 +25,9 @@ Lower `CMAKE_BUILD_PARALLEL_LEVEL` on machines with limited memory.
 MuJoCo **3.9.0 is a direct dependency**. NumPy, CPU Torch, JAX, Matplotlib and
 SciPy are also declared directly because the copied scripts use them. The
 PyTorch CPU index is selected on Linux x86_64; macOS uses its normal CPU wheel.
-The development group supplies pytest and Ruff. This is a script-based project,
-so there is no additional Python package to install from this repository.
+The development group supplies pytest, Ruff and pre-commit. This is a
+script-based project, so there is no additional Python package to install from
+this repository.
 
 ## First runs
 
@@ -110,6 +111,34 @@ The environment is CPU-only. CUDA transport and interactive viewers are outside
 the initial verification scope. [The migration report](docs/scaffold_2026-10-26.md)
 records the actual checks and any limitations. [The source manifest](docs/upstream_examples.json)
 identifies every imported file and its original hash.
+
+## Formatting and commit checks
+
+[`ruff.toml`](ruff.toml) is the single Ruff configuration: Python 3.12, 88-column
+lines, four-space indentation, double quotes and the existing pivopt import
+grouping. Ruff is pinned to 0.17.2 in both the development dependencies and
+[`.pre-commit-config.yaml`](.pre-commit-config.yaml).
+
+After installing the environment, enable the Git hook once per checkout:
+
+```bash
+uv run --no-sync pre-commit install
+uv run --no-sync pre-commit run --all-files
+```
+
+Each commit runs safe Ruff lint fixes, then formatting, then the common file
+checks. If a hook rewrites a file, inspect and stage the change before retrying
+the commit. Unsafe fixes are disabled. The hooks do not run numerical tests or
+MuJoCo simulations; run pytest separately when changing experiment behavior.
+Vendored model assets and installed skill files are excluded from whitespace
+rewrites, and generated outputs/caches are excluded from the hooks.
+
+To check Python style without rewriting files:
+
+```bash
+uv run --no-sync ruff check examples tests
+uv run --no-sync ruff format --check examples tests
+```
 
 ## Repository boundaries
 
