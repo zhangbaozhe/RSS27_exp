@@ -21,15 +21,20 @@ def main():
         pieces=4,
         head_state=p.Input("head"),
         tail_state=p.Input("tail"),
-        time=p.FixedTotalTime(
-            total_duration=p.Input("total"), minimum_piece_duration=0.1
+        time=p.AllocatedTime(
+            total=p.Input("total"),
+            fractions=p.FreeFractions(logit_penalty=0),
+            minimum_piece_duration=0.1,
         ),
         waypoints=p.DirectWaypoints(),
     )
     spec = p.ProblemSpec(
         trajectory=trajectory,
         objective=(p.Energy("jerk_energy", weights={"position": 1.0, "yaw": 0.5}),),
-        forward=p.BFGS(initial_guess=p.Input("initial")),
+        forward=p.BFGS(
+            initial_guess=p.Input("initial"),
+            settings=p.OptimizerSettings(past=3, maximum_iterations=500),
+        ),
         backward=p.ForwardOnly(),
     )
     plan = p.build_plan(spec, p.PlanShape(batch_size=1))

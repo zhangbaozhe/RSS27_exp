@@ -1235,8 +1235,10 @@ def prepare_problem(
         pieces=task.pieces,
         head_state=p.Input("head"),
         tail_state=p.Input("tail"),
-        time=p.FixedTotalTime(
-            total_duration=ref("total_duration"), minimum_piece_duration=0.1
+        time=p.AllocatedTime(
+            total=ref("total_duration"),
+            fractions=p.FreeFractions(logit_penalty=0),
+            minimum_piece_duration=0.1,
         ),
         waypoints=p.DirectWaypoints(),
     )

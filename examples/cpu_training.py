@@ -19,6 +19,7 @@ OPTIONS = p.OptimizerSettings(
     maximum_iterations=500,
     maximum_line_searches=256,
     gradient_tolerance=1e-5,
+    past=3,
 )
 
 
@@ -160,10 +161,21 @@ def base_problem(dtype=np.float64, *, optimizer="bfgs", constraints="hinge"):
                 constraints,
             ),
         ),
-        forward=(p.BFGS if optimizer == "bfgs" else p.LBFGS)(
-            initial_guess=p.Input("initial"), settings=OPTIONS
+        forward=(
+            p.BFGS(initial_guess=p.Input("initial"), settings=OPTIONS)
+            if optimizer == "bfgs"
+            else p.LBFGS(
+                initial_guess=p.Input("initial"), memory_size=8, settings=OPTIONS
+            )
         ),
-        backward=p.Implicit(),
+        backward=p.Implicit(
+            checks=p.BackwardChecks(
+                stationarity_tolerance=1e-2,
+                hessian_symmetry_tolerance=1e-6,
+                hessian_pivot_tolerance=1e-14,
+                adjoint_residual_tolerance=1e-6,
+            )
+        ),
     )
     plan = p.build_plan(
         spec,

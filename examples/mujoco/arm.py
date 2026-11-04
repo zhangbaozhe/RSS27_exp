@@ -88,7 +88,11 @@ class Arm:
             pieces=pieces,
             head_state=p.Input("head"),
             tail_state=p.FreeTail(derivatives=p.Input("tail_derivatives")),
-            time=p.FixedTotalTime(total_duration=6.0, minimum_piece_duration=0.2),
+            time=p.AllocatedTime(
+                total=p.Input("total"),
+                fractions=p.FreeFractions(logit_penalty=0),
+                minimum_piece_duration=0.2,
+            ),
             waypoints=p.DirectWaypoints(),
         )
         self.reference_data.qpos[:] = initial_q
@@ -135,6 +139,7 @@ class Arm:
             sampling=p.Trapezoidal(intervals_per_piece=24),
             forward=p.LBFGS(
                 initial_guess=p.Input("initial"),
+                memory_size=8,
                 settings=p.OptimizerSettings(maximum_iterations=500, past=0),
             ),
             backward=p.ForwardOnly(),
@@ -155,6 +160,7 @@ class Arm:
             plan,
             plan.inputs(
                 head=head,
+                total=np.full(1, 6.0),
                 tail_derivatives=np.zeros((1, 6, 2)),
                 workspace=corridor,
                 initial=plan.initial_guess(

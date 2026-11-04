@@ -17,7 +17,11 @@ def make_problem(dtype=np.float64, *, gradient_tolerance=1e-6, constraints="hing
         pieces=2,
         head_state=p.Input("head", differentiate=True),
         tail_state=p.Input("tail", differentiate=True),
-        time=p.FixedTotalTime(total_duration=2.0, minimum_piece_duration=0.1),
+        time=p.AllocatedTime(
+            total=p.Input("total"),
+            fractions=p.FreeFractions(logit_penalty=0),
+            minimum_piece_duration=0.1,
+        ),
         waypoints=p.DirectWaypoints(),
     )
     quad = p.Quadrotor()
@@ -126,6 +130,7 @@ def make_problem(dtype=np.float64, *, gradient_tolerance=1e-6, constraints="hing
         ),
         forward=p.LBFGS(
             initial_guess=p.Input("initial"),
+            memory_size=8,
             settings=p.OptimizerSettings(
                 past=0,
                 gradient_tolerance=gradient_tolerance,
@@ -149,6 +154,7 @@ def make_problem(dtype=np.float64, *, gradient_tolerance=1e-6, constraints="hing
     values = (
         (plan.input("head"), np.zeros((1, 3, 2), dtype=dtype)),
         (plan.input("tail"), np.asarray([[[2, 0], [0, 0], [0, 0]]], dtype=dtype)),
+        (plan.input("total"), np.full(1, 2.0, dtype=dtype)),
         (plan.input("corridor"), halfspaces),
         (plan.input("initial"), np.asarray([[0, 0.7, 0.1, -0.1]], dtype=dtype)),
     )

@@ -1,0 +1,415 @@
+{
+  "pivopt_commit": "94f7c1cd249d4c4fd1d3d64423971e8c786f551a",
+  "pivopt_version": "0.1.0",
+  "python": "3.12.14",
+  "platform": "macOS-27.0.1-arm64-arm-64bit",
+  "packages": {
+    "numpy": "2.5.4",
+    "torch": "2.10.0",
+    "mujoco": "3.9.0",
+    "jax": "0.11.1"
+  },
+  "command": "uv run --no-sync python -m tests.equivalence.generate_reference",
+  "example_sources_sha256": {
+    "examples/__init__.py": "4d64df58c421d30cd832585d151af80f04162c661d71b1bbd695df99e663a027",
+    "examples/arm.py": "b629b5aeef9710bfc849f6168ea15ee178cf686eff7868013281695924167228",
+    "examples/constraints.py": "ad66d1439d4c6afdc4341e87ce63aa88b357f0f77167e1414cce5570179048a3",
+    "examples/cpu_explain.py": "b1b88e9ce6bf2af2d42e50ea9b30113066aacd5e0b4512c09c2cb787a88f7140",
+    "examples/cpu_gate_certified_training.py": "cf601eb4d26cc7a67f7d4d063593df0f3097bfb23281c2fcc870734fdc3f51ed",
+    "examples/cpu_gate_probe.py": "4afd83811a89aa1e1b13fcea19335be124a069f0a3736e29c96095b5e84ab78a",
+    "examples/cpu_gate_robust_report.py": "dbfce0a2d437492c86155074edcd5d7e7e77fbf6dc364efb6110024be345897e",
+    "examples/cpu_gate_robust_search.py": "d415d6c3631c4ce7ade439aec9d6d1be97e8577c8556dcba18dc3e9a84548dc1",
+    "examples/cpu_gate_training.py": "25a67b78e9feb793735897a6cdb0f9a8c274151e6bc4d02d5deec4650b517ba9",
+    "examples/cpu_plan_shapes.py": "0d3f83007f175f7d50651e9b57f352281ce4ef88adc8368521fddfb57abb652b",
+    "examples/cpu_polytope_training.py": "5aa6d013b22a3958cb7995e796958a0a8679d0773033818ee2b54196ba93e2e1",
+    "examples/cpu_training.py": "a64ffc7288d0767fdd7c74a88b3fea454adb1f24b13a9b981c7359bf50129683",
+    "examples/cpu_xyz_yaw.py": "d7c5791bcae279b6286424a1438f72adbff1e53978e096d71ac76170d011cbbe",
+    "examples/jax_solve.py": "7877d71c663b3a324b2ff599a0fe772793988744c71b2fb695829e0fa9712ea8",
+    "examples/mujoco/arm.py": "bbe25fd5fcae93a56364d8dfe782f6c08c65ab4a9d49ba5ba4ba67ffed177bf3",
+    "examples/mujoco/common.py": "5b8449ec703b1bdabf1dc193db705f84524718dae95cce08477cc05d19f31538",
+    "examples/mujoco/planar_base.py": "0011b6b4b56fc88969c754417f6239f500fbfe962626223650ba39fd5035ea14",
+    "examples/mujoco/px4_allocation.py": "26bc697e76bed1ece83386b456266314ec6543e9dc5f90a6335733e67181d819",
+    "examples/mujoco/quadrotor.py": "e4af9baaa444b7f0c57da280a64b55be974c56d6d170ac3b6414806ba8a3d5f5",
+    "examples/mujoco/trajectory.py": "595a5ff5eeeccc1d12fa783caf04d7b31e9f20dbe911070df816af3092a4ddc2",
+    "examples/mujoco/unicycle.py": "a72d8f58cb4e713b274afd874728c66c0e6b069c9acf650b88a9bd4abf2cff15",
+    "examples/numpy_solve.py": "f6ffd2c879ef8da34f256ae553d81dc4946dc9249e3ec5a3c39b04342c2e13ee",
+    "examples/planar_base.py": "59d294f8995ffa79ead756a3bd1186bcaeee74b25ffd1f777a54d6a169ed893f",
+    "examples/torch_solve.py": "66e4255ad721103be61c34561729b725cdb42576726d44e3c9251765ba557051",
+    "examples/trajectory_problem.py": "dc1fb292b6453d1e3341658de804c69b902badabdf46d6fefcf082bbbc061a17",
+    "examples/unicycle.py": "12ae3ab91d378c9df6f8f55aa9d0af7c415218a5726d48a5a2701d57ab947f99"
+  },
+  "cases": {
+    "arm_hinge": {
+      "file": "arm_hinge.npz",
+      "sha256": "81f4a81ce96a19aa32d716ab99c76f741e12901cc38c0482f2442da591a48074",
+      "arrays": 485,
+      "status": {
+        "call00.solve.result.status": [
+          0
+        ]
+      },
+      "same_point": {
+        "call00.solve": {
+          "x_max_abs_change": 0.0,
+          "cost_max_abs_change": 0.0,
+          "iterations": [
+            0
+          ]
+        }
+      }
+    },
+    "arm_relaxed_barrier": {
+      "file": "arm_relaxed_barrier.npz",
+      "sha256": "fff4454b446bfc69466d665867f58c07a324ea99b99f47734bc81f400140b216",
+      "arrays": 488,
+      "status": {
+        "call00.solve.result.status": [
+          0
+        ]
+      },
+      "same_point": {
+        "call00.solve": {
+          "x_max_abs_change": 0.0,
+          "cost_max_abs_change": 0.0,
+          "iterations": [
+            0
+          ]
+        }
+      }
+    },
+    "mujoco_arm": {
+      "file": "mujoco_arm.npz",
+      "sha256": "d51b789fd95dd07182671c634e356f9d1a28f5ca0972cfadb3592d0973566595",
+      "arrays": 395,
+      "status": {
+        "call00.solve.result.status": [
+          0
+        ]
+      },
+      "same_point": {
+        "call00.solve": {
+          "x_max_abs_change": 0.0,
+          "cost_max_abs_change": 0.0,
+          "iterations": [
+            0
+          ]
+        }
+      }
+    },
+    "mujoco_unicycle": {
+      "file": "mujoco_unicycle.npz",
+      "sha256": "403318f0c167e443a02db7fda3985556d92198e90d4dc045af7559bc8609ca75",
+      "arrays": 194,
+      "status": {
+        "call00.solve.result.status": [
+          0
+        ]
+      },
+      "same_point": {
+        "call00.solve": {
+          "x_max_abs_change": 0.0,
+          "cost_max_abs_change": 0.0,
+          "iterations": [
+            0
+          ]
+        }
+      }
+    },
+    "gate_certified_A": {
+      "file": "gate_certified_A.npz",
+      "sha256": "ba4ceeb18c9a88386b9384b1472df69732387fa2e4b357b7bfe371d878206e31",
+      "arrays": 498,
+      "status": {
+        "call00.solve_with_state.result.status": [
+          0,
+          0
+        ],
+        "call01.pullback.pullback.diagnostics.status": [
+          0,
+          0
+        ],
+        "call01.pullback.same_point.diagnostics.status": [
+          0,
+          0
+        ]
+      },
+      "same_point": {
+        "call00.solve_with_state": {
+          "x_max_abs_change": 0.0,
+          "cost_max_abs_change": 0.0,
+          "iterations": [
+            0,
+            0
+          ]
+        },
+        "call01.pullback": {
+          "parameters_max_abs_change": {
+            "total_duration": 0.0,
+            "centripetal_cap": 0.0,
+            "corridor": 0.0,
+            "forward_acceleration_cap": 0.0,
+            "speed_cap": 0.0
+          }
+        }
+      }
+    },
+    "gate_certified_RS": {
+      "file": "gate_certified_RS.npz",
+      "sha256": "879ba1971e44e7c16d9517da0a0cae6f53cef978e3eeea0aaaf58fe7ad8b3ac8",
+      "arrays": 507,
+      "status": {
+        "call00.solve_with_state.result.status": [
+          0,
+          0
+        ],
+        "call01.pullback.pullback.diagnostics.status": [
+          0,
+          0
+        ],
+        "call01.pullback.same_point.diagnostics.status": [
+          0,
+          0
+        ]
+      },
+      "same_point": {
+        "call00.solve_with_state": {
+          "x_max_abs_change": 0.0,
+          "cost_max_abs_change": 0.0,
+          "iterations": [
+            0,
+            0
+          ]
+        },
+        "call01.pullback": {
+          "parameters_max_abs_change": {
+            "total_duration": 19.804584642453996,
+            "centripetal_cap": 0.0,
+            "corridor": 1358.538570357906,
+            "forward_acceleration_cap": 0.0,
+            "speed_cap": 0.0
+          }
+        }
+      }
+    },
+    "gate_training_hinge": {
+      "file": "gate_training_hinge.npz",
+      "sha256": "170b8f2a7209914fde79bbe7b46cf0eb26a95ed55b60348ddd4064e5017b17e6",
+      "arrays": 245,
+      "status": {
+        "call00.solve.result.status": [
+          0,
+          0
+        ]
+      },
+      "same_point": {
+        "call00.solve": {
+          "x_max_abs_change": 0.0,
+          "cost_max_abs_change": 0.0,
+          "iterations": [
+            0,
+            0
+          ]
+        }
+      }
+    },
+    "gate_training_relaxed_barrier": {
+      "file": "gate_training_relaxed_barrier.npz",
+      "sha256": "6159b2bfff84dde58514503d7bab17a7b21e337bbf37143ea1d49de4c5947238",
+      "arrays": 250,
+      "status": {
+        "call00.solve.result.status": [
+          0,
+          0
+        ]
+      },
+      "same_point": {
+        "call00.solve": {
+          "x_max_abs_change": 0.0,
+          "cost_max_abs_change": 0.0,
+          "iterations": [
+            0,
+            0
+          ]
+        }
+      }
+    },
+    "gate_probe_hinge": {
+      "file": "gate_probe_hinge.npz",
+      "sha256": "2edacf8199811d63a1f17bc1db7203aa4139c648e1d672b460ca6301c446d6cc",
+      "arrays": 383,
+      "status": {
+        "call00.solve.result.status": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "call01.solve.result.status": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "same_point": {
+        "call00.solve": {
+          "x_max_abs_change": 0.0,
+          "cost_max_abs_change": 0.0,
+          "iterations": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "call01.solve": {
+          "x_max_abs_change": 0.0,
+          "cost_max_abs_change": 0.0,
+          "iterations": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      }
+    },
+    "gate_probe_relaxed_barrier": {
+      "file": "gate_probe_relaxed_barrier.npz",
+      "sha256": "3143c7cd9aa6fb07a0eb0b7a8cbf31a909ffc8e9d76abf8dc9eed96751d43052",
+      "arrays": 385,
+      "status": {
+        "call00.solve.result.status": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "call01.solve.result.status": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "same_point": {
+        "call00.solve": {
+          "x_max_abs_change": 0.0,
+          "cost_max_abs_change": 0.0,
+          "iterations": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "call01.solve": {
+          "x_max_abs_change": 0.0,
+          "cost_max_abs_change": 0.0,
+          "iterations": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      }
+    }
+  }
+}

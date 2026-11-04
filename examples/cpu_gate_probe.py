@@ -1036,7 +1036,11 @@ def native_profile_samples(calibration, mode, slacks) -> dict:
         pieces=2,
         head_state=p.Input("head"),
         tail_state=p.Input("tail"),
-        time=p.FixedTotalTime(total_duration=1.0, minimum_piece_duration=0.1),
+        time=p.AllocatedTime(
+            total=p.Input("total"),
+            fractions=p.FreeFractions(logit_penalty=0),
+            minimum_piece_duration=0.1,
+        ),
         waypoints=p.DirectWaypoints(),
     )
     spec = p.ProblemSpec(
@@ -1073,6 +1077,7 @@ def native_profile_samples(calibration, mode, slacks) -> dict:
     rows[..., 0] = 1
     rows[..., 2] = -query[:, None, None]
     inputs = plan.inputs(
+        total=np.full(batch, 1.0),
         head=np.zeros((batch, 2, 3)),
         tail=np.zeros((batch, 2, 3)),
         rows=rows,
@@ -1107,7 +1112,11 @@ def toy_sensitivity(calibration, mode, boundaries) -> dict:
         pieces=2,
         head_state=p.Input("head"),
         tail_state=p.Input("tail"),
-        time=p.FixedTotalTime(total_duration=2.0, minimum_piece_duration=0.1),
+        time=p.AllocatedTime(
+            total=p.Input("total"),
+            fractions=p.FreeFractions(logit_penalty=0),
+            minimum_piece_duration=0.1,
+        ),
         waypoints=p.DirectWaypoints(),
     )
     spec = p.ProblemSpec(
@@ -1168,6 +1177,7 @@ def toy_sensitivity(calibration, mode, boundaries) -> dict:
     )
     result = build_solver(plan, dtype=torch.float64, backward=True).solve(
         plan.inputs(
+            total=torch.full((batch,), 2.0, dtype=torch.float64),
             head=boundary_state,
             tail=boundary_state.clone(),
             rows=rows,

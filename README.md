@@ -16,8 +16,10 @@ PIVOPT_BUILD_MODE=full CMAKE_BUILD_PARALLEL_LEVEL=8 uv sync --locked
 ```
 
 `pyproject.toml` pins pivopt to commit
-`94f7c1cd249d4c4fd1d3d64423971e8c786f551a`; `uv.lock` pins the resolved Python
-environment. The first install builds the full CPU library with backward,
+`016541046c7fd8224b056cc17b5d8d6c1f6f47a0`; `uv.lock` pins the resolved Python
+environment. The examples were imported at `94f7c1cd` and migrated once to this
+pin; [the re-pin note](docs/repin_2026-11-04.md) records the migration and the
+equivalence tests against reference outputs from `94f7c1cd`. The first install builds the full CPU library with backward,
 NumPy, Torch and JAX support. CMake and Ninja are obtained through pivopt's
 isolated build dependencies; the build also downloads pinned C++ dependencies.
 Lower `CMAKE_BUILD_PARALLEL_LEVEL` on machines with limited memory.
@@ -110,7 +112,8 @@ uv run --no-sync ruff check examples tests
 The environment is CPU-only. CUDA transport and interactive viewers are outside
 the initial verification scope. [The migration report](docs/scaffold_2026-10-26.md)
 records the actual checks and any limitations. [The source manifest](docs/upstream_examples.json)
-identifies every imported file and its original hash.
+identifies every imported file, its source hash at the current pin, its current
+hash and the reason for each local change.
 
 ## Formatting and commit checks
 

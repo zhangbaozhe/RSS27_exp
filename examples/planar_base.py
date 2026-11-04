@@ -18,7 +18,11 @@ def make_problem(*, constraints="hinge"):
         pieces=pieces,
         head_state=p.Input("head"),
         tail_state=p.Input("tail"),
-        time=p.FixedTotalTime(total_duration=6.0, minimum_piece_duration=0.1),
+        time=p.AllocatedTime(
+            total=p.Input("total"),
+            fractions=p.FreeFractions(logit_penalty=0),
+            minimum_piece_duration=0.1,
+        ),
         waypoints=p.DirectWaypoints(),
     )
     corridor = p.Input("corridor")
@@ -69,7 +73,11 @@ def make_problem(*, constraints="hinge"):
             ),
         ),
         sampling=p.Trapezoidal(intervals_per_piece=16),
-        forward=p.LBFGS(initial_guess=p.Input("initial")),
+        forward=p.LBFGS(
+            initial_guess=p.Input("initial"),
+            memory_size=8,
+            settings=p.OptimizerSettings(past=3, maximum_iterations=500),
+        ),
         backward=p.ForwardOnly(),
     )
     plan = p.build_plan(
@@ -95,6 +103,7 @@ def make_problem(*, constraints="hinge"):
     rows = np.broadcast_to(rows, (1, pieces, 4, 3)).copy()
     inputs = plan.inputs(
         head=head,
+        total=np.full(1, 6.0),
         tail=tail,
         corridor=rows,
         initial=plan.initial_guess(waypoints=waypoints, durations=durations),

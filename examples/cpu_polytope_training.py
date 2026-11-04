@@ -466,8 +466,10 @@ def prepare_problem(
         pieces=PIECE_COUNT,
         head_state=ref("head"),
         tail_state=ref("tail"),
-        time=p.FixedTotalTime(
-            total_duration=ref("total_duration"), minimum_piece_duration=0.10
+        time=p.AllocatedTime(
+            total=ref("total_duration"),
+            fractions=p.FreeFractions(logit_penalty=0),
+            minimum_piece_duration=0.10,
         ),
         waypoints=p.HardWaypoints(
             interiors=ref("waypoint_interiors"),
@@ -475,6 +477,12 @@ def prepare_problem(
         ),
     )
     quadrotor = p.Quadrotor()
+    settings = p.OptimizerSettings(
+        past=0,
+        gradient_tolerance=gradient_tolerance,
+        maximum_iterations=maximum_iterations,
+        maximum_line_searches=maximum_line_searches,
+    )
     spec = p.ProblemSpec(
         trajectory=trajectory,
         sampling=p.Trapezoidal(intervals_per_piece=16),
@@ -590,14 +598,10 @@ def prepare_problem(
                 constraints,
             ),
         ),
-        forward=(p.BFGS if optimizer == "bfgs" else p.LBFGS)(
-            initial_guess=ref("initial"),
-            settings=p.OptimizerSettings(
-                past=0,
-                gradient_tolerance=gradient_tolerance,
-                maximum_iterations=maximum_iterations,
-                maximum_line_searches=maximum_line_searches,
-            ),
+        forward=(
+            p.BFGS(initial_guess=ref("initial"), settings=settings)
+            if optimizer == "bfgs"
+            else p.LBFGS(initial_guess=ref("initial"), memory_size=8, settings=settings)
         ),
         backward=backward
         if backward is not None

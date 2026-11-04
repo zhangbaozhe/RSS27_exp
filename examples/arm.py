@@ -29,7 +29,11 @@ def make_problem(*, constraints="hinge"):
         pieces=pieces,
         head_state=p.Input("head"),
         tail_state=p.FreeTail(derivatives=p.Input("tail_derivatives")),
-        time=p.FixedTotalTime(total_duration=4.0, minimum_piece_duration=0.1),
+        time=p.AllocatedTime(
+            total=p.Input("total"),
+            fractions=p.FreeFractions(logit_penalty=0),
+            minimum_piece_duration=0.1,
+        ),
         waypoints=p.DirectWaypoints(),
     )
     # Continuous URDF joints are unbounded. This example chooses a planning
@@ -133,6 +137,7 @@ def make_problem(*, constraints="hinge"):
     workspace = np.broadcast_to(rows, (1, pieces, 6, 4)).copy()
     inputs = plan.inputs(
         head=head,
+        total=np.full(1, 4.0),
         tail_derivatives=tail_derivatives,
         workspace=workspace,
         initial=plan.initial_guess(

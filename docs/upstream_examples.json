@@ -1,341 +1,459 @@
 {
   "repository": "git@github.com:zhangbaozhe/pivopt.git",
-  "commit": "94f7c1cd249d4c4fd1d3d64423971e8c786f551a",
+  "commit": "016541046c7fd8224b056cc17b5d8d6c1f6f47a0",
+  "imported_at": "94f7c1cd249d4c4fd1d3d64423971e8c786f551a",
+  "note": "Imported at imported_at and migrated once to commit at the re-pin; see docs/repin_2026-11-04.md.",
   "files": [
     {
       "source": "examples/__init__.py",
       "destination": "examples/__init__.py",
-      "source_sha256": "4d64df58c421d30cd832585d151af80f04162c661d71b1bbd695df99e663a027"
+      "source_sha256": "4d64df58c421d30cd832585d151af80f04162c661d71b1bbd695df99e663a027",
+      "destination_sha256": "4d64df58c421d30cd832585d151af80f04162c661d71b1bbd695df99e663a027"
     },
     {
       "source": "examples/arm.py",
       "destination": "examples/arm.py",
-      "source_sha256": "b629b5aeef9710bfc849f6168ea15ee178cf686eff7868013281695924167228"
+      "source_sha256": "ff926e9dd580a79209434656f1bd8fe6e0024f97e94f006f4217645eb0f15da0",
+      "destination_sha256": "ff926e9dd580a79209434656f1bd8fe6e0024f97e94f006f4217645eb0f15da0"
     },
     {
       "source": "examples/assets/Universal_Robots_ROS2_Description-LICENSE",
       "destination": "examples/assets/Universal_Robots_ROS2_Description-LICENSE",
-      "source_sha256": "7df94feb097aca12fea3ad8410c783c930ffb35ac91783accd4e3d55dae4f322"
+      "source_sha256": "7df94feb097aca12fea3ad8410c783c930ffb35ac91783accd4e3d55dae4f322",
+      "destination_sha256": "7df94feb097aca12fea3ad8410c783c930ffb35ac91783accd4e3d55dae4f322"
     },
     {
       "source": "examples/assets/ur5e.urdf",
       "destination": "examples/assets/ur5e.urdf",
-      "source_sha256": "d9de8cfe0d603155404a7924e2e63bd8d853ffba5882356ef1abf7bf49753faf"
+      "source_sha256": "d9de8cfe0d603155404a7924e2e63bd8d853ffba5882356ef1abf7bf49753faf",
+      "destination_sha256": "d9de8cfe0d603155404a7924e2e63bd8d853ffba5882356ef1abf7bf49753faf"
     },
     {
       "source": "examples/constraints.py",
       "destination": "examples/constraints.py",
-      "source_sha256": "ad66d1439d4c6afdc4341e87ce63aa88b357f0f77167e1414cce5570179048a3"
+      "source_sha256": "ad66d1439d4c6afdc4341e87ce63aa88b357f0f77167e1414cce5570179048a3",
+      "destination_sha256": "ad66d1439d4c6afdc4341e87ce63aa88b357f0f77167e1414cce5570179048a3"
     },
     {
       "source": "examples/cpu_explain.py",
       "destination": "examples/cpu_explain.py",
-      "source_sha256": "b1b88e9ce6bf2af2d42e50ea9b30113066aacd5e0b4512c09c2cb787a88f7140"
+      "source_sha256": "b1b88e9ce6bf2af2d42e50ea9b30113066aacd5e0b4512c09c2cb787a88f7140",
+      "destination_sha256": "8e0c638b04b29455e7fec52bc14a7ea932fc09d4cbea68c23114694dfaa8949c",
+      "local_changes": [
+        "states the optimizer settings and backward checks whose defaults changed at the re-pin"
+      ]
     },
     {
       "source": "examples/cpu_gate_certified_training.py",
       "destination": "examples/cpu_gate_certified_training.py",
-      "source_sha256": "cf601eb4d26cc7a67f7d4d063593df0f3097bfb23281c2fcc870734fdc3f51ed"
+      "source_sha256": "cf601eb4d26cc7a67f7d4d063593df0f3097bfb23281c2fcc870734fdc3f51ed",
+      "destination_sha256": "cf601eb4d26cc7a67f7d4d063593df0f3097bfb23281c2fcc870734fdc3f51ed"
     },
     {
       "source": "examples/cpu_gate_probe.py",
       "destination": "examples/cpu_gate_probe.py",
-      "source_sha256": "0d57f049698520218996cfde57515d2e5c3afe1101c7acc8a9e57a3e064814b9"
+      "source_sha256": "7f02e7389f5471c71faef9c4f171f0b488468e02ef2d639462cfe1b28da4f5a6",
+      "destination_sha256": "4ac1a50029b3c6bf08bb956677f4384e68506dca5f91d729bb43939fb7ac32e5",
+      "local_changes": [
+        "writes its default outputs under artifacts/",
+        "one add_argument call formatted by the pre-commit hook"
+      ]
     },
     {
       "source": "examples/cpu_gate_robust_report.py",
       "destination": "examples/cpu_gate_robust_report.py",
-      "source_sha256": "dbfce0a2d437492c86155074edcd5d7e7e77fbf6dc364efb6110024be345897e"
+      "source_sha256": "dbfce0a2d437492c86155074edcd5d7e7e77fbf6dc364efb6110024be345897e",
+      "destination_sha256": "dbfce0a2d437492c86155074edcd5d7e7e77fbf6dc364efb6110024be345897e"
     },
     {
       "source": "examples/cpu_gate_robust_search.py",
       "destination": "examples/cpu_gate_robust_search.py",
-      "source_sha256": "d415d6c3631c4ce7ade439aec9d6d1be97e8577c8556dcba18dc3e9a84548dc1"
+      "source_sha256": "d415d6c3631c4ce7ade439aec9d6d1be97e8577c8556dcba18dc3e9a84548dc1",
+      "destination_sha256": "d415d6c3631c4ce7ade439aec9d6d1be97e8577c8556dcba18dc3e9a84548dc1"
     },
     {
       "source": "examples/cpu_gate_training.py",
       "destination": "examples/cpu_gate_training.py",
-      "source_sha256": "e53ac53449f66b4e6ea5c543f939e8cb201946e08dec6361603406dcc64ecd12"
+      "source_sha256": "ed8aefdcdbfbc9cba0eca1a80fee6df333bcc95817f4356b473f8addc49fcd17",
+      "destination_sha256": "5c7372e58ccc37bc3150aa5df232508ba114d9e3bf2dd0b8dbe68dccd6412483",
+      "local_changes": [
+        "writes its default outputs under artifacts/"
+      ]
     },
     {
       "source": "examples/cpu_plan_shapes.py",
       "destination": "examples/cpu_plan_shapes.py",
-      "source_sha256": "0d3f83007f175f7d50651e9b57f352281ce4ef88adc8368521fddfb57abb652b"
+      "source_sha256": "d31ecd4cc85221d0199d4c6317006dd4399e95db61d64a4ffa0e116c286f3f97",
+      "destination_sha256": "efad2ad36361d5254328072e727bc6d80ac240fe46e44e57d3ea13d693cf32fd",
+      "local_changes": [
+        "states the optimizer settings and backward checks whose defaults changed at the re-pin"
+      ]
     },
     {
       "source": "examples/cpu_polytope_training.py",
       "destination": "examples/cpu_polytope_training.py",
-      "source_sha256": "c25adceeaded663250c0d69cc342f98879d668ed65f80d4cd818b6d5b6708581"
+      "source_sha256": "cb98b335ac203f80c1fb1f966d3294f747107343536537623e55043c789d37f1",
+      "destination_sha256": "808dac183f1107e783e551bb2d69acc765453d47a9ad763effa6b9f677c36993",
+      "local_changes": [
+        "writes its default outputs under artifacts/",
+        "states the LBFGS memory_size whose default changed at the re-pin"
+      ]
     },
     {
       "source": "examples/cpu_training.py",
       "destination": "examples/cpu_training.py",
-      "source_sha256": "a64ffc7288d0767fdd7c74a88b3fea454adb1f24b13a9b981c7359bf50129683"
+      "source_sha256": "a64ffc7288d0767fdd7c74a88b3fea454adb1f24b13a9b981c7359bf50129683",
+      "destination_sha256": "a439bd701dbc710cae802ca14d5b13d7bb35db2eec642d37e7d6fa4c58c8d16b",
+      "local_changes": [
+        "states the optimizer settings and backward checks whose defaults changed at the re-pin",
+        "states the LBFGS memory_size whose default changed at the re-pin"
+      ]
     },
     {
       "source": "examples/cpu_xyz_yaw.py",
       "destination": "examples/cpu_xyz_yaw.py",
-      "source_sha256": "d7c5791bcae279b6286424a1438f72adbff1e53978e096d71ac76170d011cbbe"
+      "source_sha256": "294b64fde0aa4a5620618a6ca6caa2ccb677fba85a6b2f7f5762b9caab04d69f",
+      "destination_sha256": "b1d6ecc4a9b986b150a3c5d13d0286f441a440060acf0c61cac944c6a425b821",
+      "local_changes": [
+        "states the optimizer settings and backward checks whose defaults changed at the re-pin"
+      ]
     },
     {
       "source": "examples/jax_solve.py",
       "destination": "examples/jax_solve.py",
-      "source_sha256": "7877d71c663b3a324b2ff599a0fe772793988744c71b2fb695829e0fa9712ea8"
+      "source_sha256": "7877d71c663b3a324b2ff599a0fe772793988744c71b2fb695829e0fa9712ea8",
+      "destination_sha256": "7877d71c663b3a324b2ff599a0fe772793988744c71b2fb695829e0fa9712ea8"
     },
     {
       "source": "examples/mujoco/README.md",
       "destination": "examples/mujoco/README.md",
-      "source_sha256": "1e2ab1d00e08bde9a8dd8c3c6064fca7a45863887d640ef7cc095edae3a8f4dc"
+      "source_sha256": "1e2ab1d00e08bde9a8dd8c3c6064fca7a45863887d640ef7cc095edae3a8f4dc",
+      "destination_sha256": "2f4ecdab7bf9774ace3516c73db372570024b5604d605c85b492018fa1e3e089",
+      "local_changes": [
+        "uses the root installation command"
+      ]
     },
     {
       "source": "examples/mujoco/arm.py",
       "destination": "examples/mujoco/arm.py",
-      "source_sha256": "bbe25fd5fcae93a56364d8dfe782f6c08c65ab4a9d49ba5ba4ba67ffed177bf3"
+      "source_sha256": "ee20074258e3ee8fb4abdb3aa33bccd687fd304cdac87abe5a8088f0437693b1",
+      "destination_sha256": "740dfcf0ed4acd22815e6df5d1b99ac06544de45f3296176dfad1b7a7ebb43c0",
+      "local_changes": [
+        "states the LBFGS memory_size whose default changed at the re-pin"
+      ]
     },
     {
       "source": "examples/mujoco/assets/PX4-LICENSE",
       "destination": "examples/mujoco/assets/PX4-LICENSE",
-      "source_sha256": "5e861a29843c7b94981336dd319ea9e7c0c034eff2bbd2828a2299a65d760d4c"
+      "source_sha256": "5e861a29843c7b94981336dd319ea9e7c0c034eff2bbd2828a2299a65d760d4c",
+      "destination_sha256": "5e861a29843c7b94981336dd319ea9e7c0c034eff2bbd2828a2299a65d760d4c"
     },
     {
       "source": "examples/mujoco/assets/SOURCES.md",
       "destination": "examples/mujoco/assets/SOURCES.md",
-      "source_sha256": "79e7f4aac93f8a2919a7d453fe2ef7e830d9129a80b51e22f154054d46d4d16e"
+      "source_sha256": "79e7f4aac93f8a2919a7d453fe2ef7e830d9129a80b51e22f154054d46d4d16e",
+      "destination_sha256": "79e7f4aac93f8a2919a7d453fe2ef7e830d9129a80b51e22f154054d46d4d16e"
     },
     {
       "source": "examples/mujoco/assets/planar_base.xml",
       "destination": "examples/mujoco/assets/planar_base.xml",
-      "source_sha256": "574c7cead8fe66e2e8d9637ffc849c4785a7a4a12b034a3744e273baecd71dbb"
+      "source_sha256": "574c7cead8fe66e2e8d9637ffc849c4785a7a4a12b034a3744e273baecd71dbb",
+      "destination_sha256": "574c7cead8fe66e2e8d9637ffc849c4785a7a4a12b034a3744e273baecd71dbb"
     },
     {
       "source": "examples/mujoco/assets/skydio_x2/LICENSE",
       "destination": "examples/mujoco/assets/skydio_x2/LICENSE",
-      "source_sha256": "d42cae9a0f292b7a713597ba26e1e1e23d50df906c488f0d36fd3538af200bc1"
+      "source_sha256": "d42cae9a0f292b7a713597ba26e1e1e23d50df906c488f0d36fd3538af200bc1",
+      "destination_sha256": "d42cae9a0f292b7a713597ba26e1e1e23d50df906c488f0d36fd3538af200bc1"
     },
     {
       "source": "examples/mujoco/assets/skydio_x2/assets/X2_lowpoly.obj",
       "destination": "examples/mujoco/assets/skydio_x2/assets/X2_lowpoly.obj",
-      "source_sha256": "4d6df3d7b26676a6ade8cbc320599961321ac3e3c52474d7c98dd7adc8152411"
+      "source_sha256": "4d6df3d7b26676a6ade8cbc320599961321ac3e3c52474d7c98dd7adc8152411",
+      "destination_sha256": "4d6df3d7b26676a6ade8cbc320599961321ac3e3c52474d7c98dd7adc8152411"
     },
     {
       "source": "examples/mujoco/assets/skydio_x2/assets/X2_lowpoly_texture_SpinningProps_1024.png",
       "destination": "examples/mujoco/assets/skydio_x2/assets/X2_lowpoly_texture_SpinningProps_1024.png",
-      "source_sha256": "24153733dd01f9ddd37a3c79fad5e24ac876228812e3a8e95f60ccd8cedb66e1"
+      "source_sha256": "24153733dd01f9ddd37a3c79fad5e24ac876228812e3a8e95f60ccd8cedb66e1",
+      "destination_sha256": "24153733dd01f9ddd37a3c79fad5e24ac876228812e3a8e95f60ccd8cedb66e1"
     },
     {
       "source": "examples/mujoco/assets/skydio_x2/x2.xml",
       "destination": "examples/mujoco/assets/skydio_x2/x2.xml",
-      "source_sha256": "5e8f14afe735d07e0b299444d68927058a757149761313c2f0d2f88264c2ae7b"
+      "source_sha256": "5e8f14afe735d07e0b299444d68927058a757149761313c2f0d2f88264c2ae7b",
+      "destination_sha256": "5e8f14afe735d07e0b299444d68927058a757149761313c2f0d2f88264c2ae7b"
     },
     {
       "source": "examples/mujoco/assets/unicycle.xml",
       "destination": "examples/mujoco/assets/unicycle.xml",
-      "source_sha256": "6fa04769334cc8ba13de0e54bcde92a46a49d0376e969000fc83aaaf169e5a45"
+      "source_sha256": "6fa04769334cc8ba13de0e54bcde92a46a49d0376e969000fc83aaaf169e5a45",
+      "destination_sha256": "6fa04769334cc8ba13de0e54bcde92a46a49d0376e969000fc83aaaf169e5a45"
     },
     {
       "source": "examples/mujoco/assets/upstream.json",
       "destination": "examples/mujoco/assets/upstream.json",
-      "source_sha256": "84b2ca33c7b9ce664ff61991d2858d106e5216156b6bcf659a429ddf0f77c2b3"
+      "source_sha256": "84b2ca33c7b9ce664ff61991d2858d106e5216156b6bcf659a429ddf0f77c2b3",
+      "destination_sha256": "84b2ca33c7b9ce664ff61991d2858d106e5216156b6bcf659a429ddf0f77c2b3"
     },
     {
       "source": "examples/mujoco/assets/ur5e/LICENSE",
       "destination": "examples/mujoco/assets/ur5e/LICENSE",
-      "source_sha256": "5ec71ccf66c8d03261448f2441a586765b97f2248c860a1ae19689fb1c45cee6"
+      "source_sha256": "5ec71ccf66c8d03261448f2441a586765b97f2248c860a1ae19689fb1c45cee6",
+      "destination_sha256": "5ec71ccf66c8d03261448f2441a586765b97f2248c860a1ae19689fb1c45cee6"
     },
     {
       "source": "examples/mujoco/assets/ur5e/assets/base_0.obj",
       "destination": "examples/mujoco/assets/ur5e/assets/base_0.obj",
-      "source_sha256": "9a3b21f1524baef6af8a52d7af90b6e94b79f7e3c2b04a0f6581f74d22291b0b"
+      "source_sha256": "9a3b21f1524baef6af8a52d7af90b6e94b79f7e3c2b04a0f6581f74d22291b0b",
+      "destination_sha256": "9a3b21f1524baef6af8a52d7af90b6e94b79f7e3c2b04a0f6581f74d22291b0b"
     },
     {
       "source": "examples/mujoco/assets/ur5e/assets/base_1.obj",
       "destination": "examples/mujoco/assets/ur5e/assets/base_1.obj",
-      "source_sha256": "cf7d54691a2c1eeda280955ebd6bd83c2dbecfc46fb53c10198f05d107511b50"
+      "source_sha256": "cf7d54691a2c1eeda280955ebd6bd83c2dbecfc46fb53c10198f05d107511b50",
+      "destination_sha256": "cf7d54691a2c1eeda280955ebd6bd83c2dbecfc46fb53c10198f05d107511b50"
     },
     {
       "source": "examples/mujoco/assets/ur5e/assets/forearm_0.obj",
       "destination": "examples/mujoco/assets/ur5e/assets/forearm_0.obj",
-      "source_sha256": "64c049a55149c2ab355594d52302b53d3e34da3677ceaa1917c427cde7743146"
+      "source_sha256": "64c049a55149c2ab355594d52302b53d3e34da3677ceaa1917c427cde7743146",
+      "destination_sha256": "64c049a55149c2ab355594d52302b53d3e34da3677ceaa1917c427cde7743146"
     },
     {
       "source": "examples/mujoco/assets/ur5e/assets/forearm_1.obj",
       "destination": "examples/mujoco/assets/ur5e/assets/forearm_1.obj",
-      "source_sha256": "a96fe203015cf532b193f414cd01268c7c36795e51a837dd33afd122334f81f2"
+      "source_sha256": "a96fe203015cf532b193f414cd01268c7c36795e51a837dd33afd122334f81f2",
+      "destination_sha256": "a96fe203015cf532b193f414cd01268c7c36795e51a837dd33afd122334f81f2"
     },
     {
       "source": "examples/mujoco/assets/ur5e/assets/forearm_2.obj",
       "destination": "examples/mujoco/assets/ur5e/assets/forearm_2.obj",
-      "source_sha256": "05b436505fc595aeab26675590c2b56b88a65b2d52d6352096fed9f07cb4c4ca"
+      "source_sha256": "05b436505fc595aeab26675590c2b56b88a65b2d52d6352096fed9f07cb4c4ca",
+      "destination_sha256": "05b436505fc595aeab26675590c2b56b88a65b2d52d6352096fed9f07cb4c4ca"
     },
     {
       "source": "examples/mujoco/assets/ur5e/assets/forearm_3.obj",
       "destination": "examples/mujoco/assets/ur5e/assets/forearm_3.obj",
-      "source_sha256": "fa31af19cfad7a765b62e8a2d5931cb014b88de84195a7850b4e5ee902112e9a"
+      "source_sha256": "fa31af19cfad7a765b62e8a2d5931cb014b88de84195a7850b4e5ee902112e9a",
+      "destination_sha256": "fa31af19cfad7a765b62e8a2d5931cb014b88de84195a7850b4e5ee902112e9a"
     },
     {
       "source": "examples/mujoco/assets/ur5e/assets/shoulder_0.obj",
       "destination": "examples/mujoco/assets/ur5e/assets/shoulder_0.obj",
-      "source_sha256": "477387a7e7312782a6040484a3c2c2fcee33f40109f419076e31b6f6e1692c68"
+      "source_sha256": "477387a7e7312782a6040484a3c2c2fcee33f40109f419076e31b6f6e1692c68",
+      "destination_sha256": "477387a7e7312782a6040484a3c2c2fcee33f40109f419076e31b6f6e1692c68"
     },
     {
       "source": "examples/mujoco/assets/ur5e/assets/shoulder_1.obj",
       "destination": "examples/mujoco/assets/ur5e/assets/shoulder_1.obj",
-      "source_sha256": "8537bba02804640ddf6e260f79fe66e895b3229ed3d44298a95e8e027eb5d435"
+      "source_sha256": "8537bba02804640ddf6e260f79fe66e895b3229ed3d44298a95e8e027eb5d435",
+      "destination_sha256": "8537bba02804640ddf6e260f79fe66e895b3229ed3d44298a95e8e027eb5d435"
     },
     {
       "source": "examples/mujoco/assets/ur5e/assets/shoulder_2.obj",
       "destination": "examples/mujoco/assets/ur5e/assets/shoulder_2.obj",
-      "source_sha256": "291714518416bb8f0bafbf123867db011ecbf5146a05245ca5893ee8c57d4e21"
+      "source_sha256": "291714518416bb8f0bafbf123867db011ecbf5146a05245ca5893ee8c57d4e21",
+      "destination_sha256": "291714518416bb8f0bafbf123867db011ecbf5146a05245ca5893ee8c57d4e21"
     },
     {
       "source": "examples/mujoco/assets/ur5e/assets/upperarm_0.obj",
       "destination": "examples/mujoco/assets/ur5e/assets/upperarm_0.obj",
-      "source_sha256": "14143d4f1175a7dbacc8e2f2f98f1cac5a2b2e238cd46cd03654d31f2610eb53"
+      "source_sha256": "14143d4f1175a7dbacc8e2f2f98f1cac5a2b2e238cd46cd03654d31f2610eb53",
+      "destination_sha256": "14143d4f1175a7dbacc8e2f2f98f1cac5a2b2e238cd46cd03654d31f2610eb53"
     },
     {
       "source": "examples/mujoco/assets/ur5e/assets/upperarm_1.obj",
       "destination": "examples/mujoco/assets/ur5e/assets/upperarm_1.obj",
-      "source_sha256": "272899e927f4a32b7c25e34560ec70654c0346cc8ed1c616c0555f3f53b32d14"
+      "source_sha256": "272899e927f4a32b7c25e34560ec70654c0346cc8ed1c616c0555f3f53b32d14",
+      "destination_sha256": "272899e927f4a32b7c25e34560ec70654c0346cc8ed1c616c0555f3f53b32d14"
     },
     {
       "source": "examples/mujoco/assets/ur5e/assets/upperarm_2.obj",
       "destination": "examples/mujoco/assets/ur5e/assets/upperarm_2.obj",
-      "source_sha256": "86c05350d60eb0e7e28a81b544267478b7db997baba41cef19088ebbeffecfa1"
+      "source_sha256": "86c05350d60eb0e7e28a81b544267478b7db997baba41cef19088ebbeffecfa1",
+      "destination_sha256": "86c05350d60eb0e7e28a81b544267478b7db997baba41cef19088ebbeffecfa1"
     },
     {
       "source": "examples/mujoco/assets/ur5e/assets/upperarm_3.obj",
       "destination": "examples/mujoco/assets/ur5e/assets/upperarm_3.obj",
-      "source_sha256": "b257dab441e6fab64ea03b4b87029d8a96554ad1a513cce944d56acba0ad948a"
+      "source_sha256": "b257dab441e6fab64ea03b4b87029d8a96554ad1a513cce944d56acba0ad948a",
+      "destination_sha256": "b257dab441e6fab64ea03b4b87029d8a96554ad1a513cce944d56acba0ad948a"
     },
     {
       "source": "examples/mujoco/assets/ur5e/assets/wrist1_0.obj",
       "destination": "examples/mujoco/assets/ur5e/assets/wrist1_0.obj",
-      "source_sha256": "7ef0c59b5c5d56a9902435c9a058b27d2a38c85fe2bae02d00a9284dd1f4d519"
+      "source_sha256": "7ef0c59b5c5d56a9902435c9a058b27d2a38c85fe2bae02d00a9284dd1f4d519",
+      "destination_sha256": "7ef0c59b5c5d56a9902435c9a058b27d2a38c85fe2bae02d00a9284dd1f4d519"
     },
     {
       "source": "examples/mujoco/assets/ur5e/assets/wrist1_1.obj",
       "destination": "examples/mujoco/assets/ur5e/assets/wrist1_1.obj",
-      "source_sha256": "ee6d5c562e6becef94109b0543329080d285d1aef521a01ed98e18a5bf1e8684"
+      "source_sha256": "ee6d5c562e6becef94109b0543329080d285d1aef521a01ed98e18a5bf1e8684",
+      "destination_sha256": "ee6d5c562e6becef94109b0543329080d285d1aef521a01ed98e18a5bf1e8684"
     },
     {
       "source": "examples/mujoco/assets/ur5e/assets/wrist1_2.obj",
       "destination": "examples/mujoco/assets/ur5e/assets/wrist1_2.obj",
-      "source_sha256": "88c66dc64f15391287147d50add37729a3f41dadd80b1f859cf2cb6d45daf32a"
+      "source_sha256": "88c66dc64f15391287147d50add37729a3f41dadd80b1f859cf2cb6d45daf32a",
+      "destination_sha256": "88c66dc64f15391287147d50add37729a3f41dadd80b1f859cf2cb6d45daf32a"
     },
     {
       "source": "examples/mujoco/assets/ur5e/assets/wrist2_0.obj",
       "destination": "examples/mujoco/assets/ur5e/assets/wrist2_0.obj",
-      "source_sha256": "2ac2e2e39d8f7005bc3b3ab26cd61634be2e14930074615da5318b9ee7c569a8"
+      "source_sha256": "2ac2e2e39d8f7005bc3b3ab26cd61634be2e14930074615da5318b9ee7c569a8",
+      "destination_sha256": "2ac2e2e39d8f7005bc3b3ab26cd61634be2e14930074615da5318b9ee7c569a8"
     },
     {
       "source": "examples/mujoco/assets/ur5e/assets/wrist2_1.obj",
       "destination": "examples/mujoco/assets/ur5e/assets/wrist2_1.obj",
-      "source_sha256": "a721d06dc61d3b3a8ec58c035c9e3358ed30d6991a72e077d8abf3c3c203b633"
+      "source_sha256": "a721d06dc61d3b3a8ec58c035c9e3358ed30d6991a72e077d8abf3c3c203b633",
+      "destination_sha256": "a721d06dc61d3b3a8ec58c035c9e3358ed30d6991a72e077d8abf3c3c203b633"
     },
     {
       "source": "examples/mujoco/assets/ur5e/assets/wrist2_2.obj",
       "destination": "examples/mujoco/assets/ur5e/assets/wrist2_2.obj",
-      "source_sha256": "6df4335c8bd5e881fda2c224f770115ffe9ddd0cd321ebe3c0a4a310796f0987"
+      "source_sha256": "6df4335c8bd5e881fda2c224f770115ffe9ddd0cd321ebe3c0a4a310796f0987",
+      "destination_sha256": "6df4335c8bd5e881fda2c224f770115ffe9ddd0cd321ebe3c0a4a310796f0987"
     },
     {
       "source": "examples/mujoco/assets/ur5e/assets/wrist3.obj",
       "destination": "examples/mujoco/assets/ur5e/assets/wrist3.obj",
-      "source_sha256": "0e51748f9c93bd66604360a5cf7e2e8a6e754550be64076333ff4fc19ec90c61"
+      "source_sha256": "0e51748f9c93bd66604360a5cf7e2e8a6e754550be64076333ff4fc19ec90c61",
+      "destination_sha256": "0e51748f9c93bd66604360a5cf7e2e8a6e754550be64076333ff4fc19ec90c61"
     },
     {
       "source": "examples/mujoco/assets/ur5e/ur5e.xml",
       "destination": "examples/mujoco/assets/ur5e/ur5e.xml",
-      "source_sha256": "ffd0a7b336d3c2d27c35a15cc0d4aaa95196769aca190ac8d6522d3318c345a0"
+      "source_sha256": "ffd0a7b336d3c2d27c35a15cc0d4aaa95196769aca190ac8d6522d3318c345a0",
+      "destination_sha256": "ffd0a7b336d3c2d27c35a15cc0d4aaa95196769aca190ac8d6522d3318c345a0"
     },
     {
       "source": "examples/mujoco/common.py",
       "destination": "examples/mujoco/common.py",
-      "source_sha256": "5b8449ec703b1bdabf1dc193db705f84524718dae95cce08477cc05d19f31538"
+      "source_sha256": "5b8449ec703b1bdabf1dc193db705f84524718dae95cce08477cc05d19f31538",
+      "destination_sha256": "5b8449ec703b1bdabf1dc193db705f84524718dae95cce08477cc05d19f31538"
     },
     {
       "source": "examples/mujoco/planar_base.py",
       "destination": "examples/mujoco/planar_base.py",
-      "source_sha256": "0011b6b4b56fc88969c754417f6239f500fbfe962626223650ba39fd5035ea14"
+      "source_sha256": "9cc22465f43454b14ee59dd56633b3db056819d257ab91ddd2c3cab3eb73222f",
+      "destination_sha256": "c53cb48dd4fa42b881b100c59b2d3d883f1a0634d48022fa567ce5c3730d37d6",
+      "local_changes": [
+        "states the LBFGS memory_size whose default changed at the re-pin"
+      ]
     },
     {
       "source": "examples/mujoco/px4_allocation.py",
       "destination": "examples/mujoco/px4_allocation.py",
-      "source_sha256": "26bc697e76bed1ece83386b456266314ec6543e9dc5f90a6335733e67181d819"
+      "source_sha256": "26bc697e76bed1ece83386b456266314ec6543e9dc5f90a6335733e67181d819",
+      "destination_sha256": "26bc697e76bed1ece83386b456266314ec6543e9dc5f90a6335733e67181d819"
     },
     {
       "source": "examples/mujoco/quadrotor.py",
       "destination": "examples/mujoco/quadrotor.py",
-      "source_sha256": "e4af9baaa444b7f0c57da280a64b55be974c56d6d170ac3b6414806ba8a3d5f5"
+      "source_sha256": "6eb6e0d41c39de147fc9f5390769a8e22b8242e7900450d18966663b31d744b1",
+      "destination_sha256": "b82deb3e292a10db1f5a40e218e096d6723014588b8e2788f09522927d694882",
+      "local_changes": [
+        "states the LBFGS memory_size whose default changed at the re-pin"
+      ]
     },
     {
       "source": "examples/mujoco/trajectory.py",
       "destination": "examples/mujoco/trajectory.py",
-      "source_sha256": "595a5ff5eeeccc1d12fa783caf04d7b31e9f20dbe911070df816af3092a4ddc2"
+      "source_sha256": "595a5ff5eeeccc1d12fa783caf04d7b31e9f20dbe911070df816af3092a4ddc2",
+      "destination_sha256": "595a5ff5eeeccc1d12fa783caf04d7b31e9f20dbe911070df816af3092a4ddc2"
     },
     {
       "source": "examples/mujoco/unicycle.py",
       "destination": "examples/mujoco/unicycle.py",
-      "source_sha256": "a72d8f58cb4e713b274afd874728c66c0e6b069c9acf650b88a9bd4abf2cff15"
+      "source_sha256": "42d494750d9311bbc6654c562909bbef8fdabb514f0127b91b40d2e88a9dd48b",
+      "destination_sha256": "5104442a0f944eb6bab7f2d8ec5eb55d6cbbeae9fe35fdd0d5e12021986f7e43",
+      "local_changes": [
+        "states the LBFGS memory_size whose default changed at the re-pin"
+      ]
     },
     {
       "source": "examples/numpy_solve.py",
       "destination": "examples/numpy_solve.py",
-      "source_sha256": "f6ffd2c879ef8da34f256ae553d81dc4946dc9249e3ec5a3c39b04342c2e13ee"
+      "source_sha256": "f6ffd2c879ef8da34f256ae553d81dc4946dc9249e3ec5a3c39b04342c2e13ee",
+      "destination_sha256": "f6ffd2c879ef8da34f256ae553d81dc4946dc9249e3ec5a3c39b04342c2e13ee"
     },
     {
       "source": "examples/planar_base.py",
       "destination": "examples/planar_base.py",
-      "source_sha256": "59d294f8995ffa79ead756a3bd1186bcaeee74b25ffd1f777a54d6a169ed893f"
+      "source_sha256": "21acb26567390b7d95eca196d3ee4aafea9b54423e3b870d5c204dd2c186e18c",
+      "destination_sha256": "e7f944d4ea693d9494c2c766faff0d2cdd5173ded547a0083139e6db19552919",
+      "local_changes": [
+        "states the optimizer settings and backward checks whose defaults changed at the re-pin",
+        "states the LBFGS memory_size whose default changed at the re-pin"
+      ]
     },
     {
       "source": "examples/torch_solve.py",
       "destination": "examples/torch_solve.py",
-      "source_sha256": "66e4255ad721103be61c34561729b725cdb42576726d44e3c9251765ba557051"
+      "source_sha256": "66e4255ad721103be61c34561729b725cdb42576726d44e3c9251765ba557051",
+      "destination_sha256": "66e4255ad721103be61c34561729b725cdb42576726d44e3c9251765ba557051"
     },
     {
       "source": "examples/trajectory_problem.py",
       "destination": "examples/trajectory_problem.py",
-      "source_sha256": "dc1fb292b6453d1e3341658de804c69b902badabdf46d6fefcf082bbbc061a17"
+      "source_sha256": "6218d966f063ed84a73a91896ef4223815884c286db9ad4f24e004f58dba3437",
+      "destination_sha256": "1dcbf011c5cc9cc1131eb325f84a32f5aecd04d1831ae89713688396f1fa5883",
+      "local_changes": [
+        "states the LBFGS memory_size whose default changed at the re-pin"
+      ]
     },
     {
       "source": "examples/unicycle.py",
       "destination": "examples/unicycle.py",
-      "source_sha256": "12ae3ab91d378c9df6f8f55aa9d0af7c415218a5726d48a5a2701d57ab947f99"
+      "source_sha256": "12ae3ab91d378c9df6f8f55aa9d0af7c415218a5726d48a5a2701d57ab947f99",
+      "destination_sha256": "12ae3ab91d378c9df6f8f55aa9d0af7c415218a5726d48a5a2701d57ab947f99"
     },
     {
       "source": "tests/test_cpu_gate_certified_training_example.py",
       "destination": "tests/test_cpu_gate_certified_training_example.py",
-      "source_sha256": "173435906af0805c24748daa47a09e1730f2bcd11080c923ce72bf8db009e243"
+      "source_sha256": "173435906af0805c24748daa47a09e1730f2bcd11080c923ce72bf8db009e243",
+      "destination_sha256": "173435906af0805c24748daa47a09e1730f2bcd11080c923ce72bf8db009e243"
     },
     {
       "source": "tests/test_constraint_examples.py",
       "destination": "tests/test_constraint_examples.py",
-      "source_sha256": "6cce8956787ec9b1616eaa5108596fe1afd169d8d532711c397f235c199b3660"
+      "source_sha256": "6cce8956787ec9b1616eaa5108596fe1afd169d8d532711c397f235c199b3660",
+      "destination_sha256": "6cce8956787ec9b1616eaa5108596fe1afd169d8d532711c397f235c199b3660"
     },
     {
       "source": "tests/test_cpu_training_example.py",
       "destination": "tests/test_cpu_training_example.py",
-      "source_sha256": "4657aeebdd8392be95bc7e3da020f069155fc12fc202d270eee426d31f8bf90a"
+      "source_sha256": "4657aeebdd8392be95bc7e3da020f069155fc12fc202d270eee426d31f8bf90a",
+      "destination_sha256": "4657aeebdd8392be95bc7e3da020f069155fc12fc202d270eee426d31f8bf90a"
     },
     {
       "source": "tests/test_unicycle_example.py",
       "destination": "tests/test_unicycle_example.py",
-      "source_sha256": "4c796c1d5254e29e63b7b1b4b0e6700bf58dd5974ed826262932db1856c08f69"
+      "source_sha256": "4c796c1d5254e29e63b7b1b4b0e6700bf58dd5974ed826262932db1856c08f69",
+      "destination_sha256": "4c796c1d5254e29e63b7b1b4b0e6700bf58dd5974ed826262932db1856c08f69"
     },
     {
       "source": "tests/test_mujoco_examples.py",
       "destination": "tests/test_mujoco_examples.py",
-      "source_sha256": "699286d27d5070772318c3b7c23b00e789a644767bf40f00ceeb8ac08b3f0559"
+      "source_sha256": "699286d27d5070772318c3b7c23b00e789a644767bf40f00ceeb8ac08b3f0559",
+      "destination_sha256": "09519351f29d37c2203fed0eaf2f76ea562573a061fc916919a97196857af641",
+      "local_changes": [
+        "imports the independent tests/reference_chain.py"
+      ]
     },
     {
       "source": "tests/fixtures/mujoco/px4_allocation.json",
       "destination": "tests/fixtures/mujoco/px4_allocation.json",
-      "source_sha256": "619f0aeccf9ad0ad9576d5a036b64c3101643ed4fbb5304db7f43630d0c0182f"
+      "source_sha256": "619f0aeccf9ad0ad9576d5a036b64c3101643ed4fbb5304db7f43630d0c0182f",
+      "destination_sha256": "619f0aeccf9ad0ad9576d5a036b64c3101643ed4fbb5304db7f43630d0c0182f"
     },
     {
       "source": "tests/pivopt_jax_reference/chain.py",
       "destination": "tests/reference_chain.py",
-      "source_sha256": "b2d1a1c653269f75c394b08aa076ee79a50286374b5153932c91391102eec11e"
+      "source_sha256": "b2d1a1c653269f75c394b08aa076ee79a50286374b5153932c91391102eec11e",
+      "destination_sha256": "b2d1a1c653269f75c394b08aa076ee79a50286374b5153932c91391102eec11e"
     }
   ]
 }

@@ -30,10 +30,14 @@ is checked out as `../RSS27/`.
    `<paper>/docs/sensitivity_framework_1031.md`) were absent from the
    2026-11-04 checkout. None of their numbers is used until it has been
    regenerated at the new pin (v9 §8, stage S0).
-3. **Scaffold**: `docs/scaffold_2026-10-26.md` records how `examples/` was
+3. **Re-pin**: `docs/repin_2026-11-04.md` records the user's decisions Q41–Q44
+   and the re-pin to pivopt `01654104`: the one-time migration of `examples/`,
+   the reference outputs generated at `94f7c1cd`, the equivalence criterion
+   and its results (52 passing tests).
+4. **Scaffold**: `docs/scaffold_2026-10-26.md` records how `examples/` was
    imported from pivopt `94f7c1cd`, the environment, and the verification
    baseline (42 passing tests).
-4. **Exploratory pilots**: `artifacts/pilot_1026/` (git-ignored and
+5. **Exploratory pilots**: `artifacts/pilot_1026/` (git-ignored and
    machine-local). They used a single seed, constants tuned on the test batch,
    untuned ES/FR and a saturating sigmoid decoder. They motivate the design and
    are never reported as results.
@@ -79,26 +83,31 @@ leads, not proof: check the code and the raw outputs before relying on a claim.
 
 | Path | Role | Rule |
 |---|---|---|
-| `examples/` | pivopt examples imported at `94f7c1cd`; `docs/upstream_examples.json` holds their source hashes | **Frozen.** Never edit them or run fixers on them. Only the existing example tests and the equivalence tests may import them, read-only |
-| `experiments/` | Reusable package for the paper's experiments (framing v9 §5 and §7–§9). It is created only after the re-pin milestone below | Run modules as `python -m experiments.<module>` from the repository root and import them as `experiments.<module>`. Never put `experiments/` itself on `sys.path`. When creating the package, add `"."` to pytest's `pythonpath`. Give each module one responsibility |
+| `examples/` | pivopt examples imported at `94f7c1cd` and migrated once to `01654104` at the re-pin; `docs/upstream_examples.json` holds their source hashes and every local change | **Frozen at the current pin.** Never edit them or run fixers on them. They change only in a re-pin milestone that the user approves, which migrates them to the new API and proves the legacy behavior with the equivalence tests. Only the example tests and the equivalence tests may import them, read-only |
+| `experiments/` | Reusable package for the paper's experiments (framing v9 §5 and §7–§9). The re-pin milestone is complete, so it may now be created | Run modules as `python -m experiments.<module>` from the repository root and import them as `experiments.<module>`. Never put `experiments/` itself on `sys.path`. When creating the package, add `"."` to pytest's `pythonpath`. Give each module one responsibility |
 | `tests/` | pytest suite | Tests use the same public interfaces as the code they check |
 | `artifacts/` | All generated outputs (git-ignored) | One directory per experiment, each with a manifest. Never commit outputs |
 | `docs/` | Repository notes and provenance | Add one short note per completed milestone |
 | `<paper>/` | The paper and the framing (a separate repository) | Do not edit it from here unless the user asks. Never edit `<paper>/main.tex` without an explicit request |
 
-pivopt is a dependency pinned in `pyproject.toml` and `uv.lock`, currently at
-`94f7c1cd`. The user has approved a re-pin to pivopt master (`01654104` when
-the decision was made; v9 §1.3). The re-pin is its own milestone, and no
-`experiments/` code is written before it.
+pivopt is a dependency pinned in `pyproject.toml` and `uv.lock` at
+`01654104` (master on 2026-11-04; v9 §1.3). The re-pin from `94f7c1cd` is
+recorded in `docs/repin_2026-11-04.md`.
 
-- master removed `FixedTotalTime`, replacing it with `AllocatedTime` without
-  an alias, and the frozen examples use `FixedTotalTime`. The equivalence tests
-  therefore generate reference outputs at `94f7c1cd`, and compare the migrated
-  legacy configurations at the new pin against them.
-- At the time of the decision, the latest master commit changed the default
-  optimizer settings. Every new experiment states all optimizer settings
-  explicitly.
-- softplus, which v9 §5 and §8 use, exists only on master.
+- `01654104` removed `FixedTotalTime` without an alias. The examples now use
+  `AllocatedTime` with `FreeFractions(logit_penalty=0)` and, as upstream did,
+  bind a constant total as an input.
+- `01654104` changed the defaults of `OptimizerSettings.past`,
+  `OptimizerSettings.maximum_iterations`, `LBFGS.memory_size` and
+  `BackwardChecks` (every gate is now disabled). The migrated examples state
+  the old values explicitly. Every new experiment states all optimizer
+  settings and backward checks explicitly.
+- `tests/fixtures/repin_94f7c1cd/` holds reference outputs generated at
+  `94f7c1cd` with the unmigrated examples, and `tests/equivalence/` compares
+  the migrated configurations against them. Regenerating the references
+  requires an old-pin tree; `tests/equivalence/generate_reference.py` explains
+  how.
+- softplus, which v9 §5 and §8 use, exists only from this pin on.
 
 Never edit pivopt from this repository. pivopt may change for the research,
 for example to add the direct-TO cost terms of v9 §1.3 and §6. Such changes go
@@ -192,13 +201,25 @@ paper's central claim, so ask whenever you are unsure.
 
 - Reimplement inside `experiments/` whatever the experiments need from the
   frozen examples; do not copy blocks out of `examples/`.
-- No development run starts until the equivalence tests pass. They run the
-  legacy configuration (sigmoid decoder, baseline calibration) on fixed batches
-  and require:
-  - planner inputs and outputs bitwise identical to the reference outputs
-    generated at `94f7c1cd`;
-  - outer losses and utility within 1e-12 relative;
-  - frozen dataset hashes that match.
+- No development run starts until the equivalence tests in
+  `tests/equivalence/` pass. They run the legacy configurations that v9 uses
+  (the gate planning problems of `cpu_gate_certified_training`,
+  `cpu_gate_training` and `cpu_gate_probe` with the sigmoid decoder and the
+  baseline calibration on fixed batches, `examples/arm.py`,
+  `examples/mujoco/arm.py` and `examples/mujoco/unicycle.py`) against the
+  reference outputs generated at `94f7c1cd`, and require:
+  - planner inputs bitwise identical, and declarations, including every
+    optimizer setting and backward check, identical apart from the documented
+    time migration;
+  - identical lane status and cause codes;
+  - outputs bitwise where pivopt records a path as bitwise unchanged;
+  - elsewhere, pivopt's approved endpoint envelope (f64: rtol 2e-6, atol 2e-7,
+    objective 1e-8 relative to max(1, |value|)) on lanes that are stationary
+    to 1e-7 on both pins, and for every lane, zero-iteration solves and
+    pullbacks at the same trajectory point inside the same envelope;
+  - planner-derived example values, such as outer losses, inside the envelope
+    when every lane qualified, and otherwise reported;
+  - optimizer work counts reported, not compared.
 - New experiments use the centered log decoder, which gives every
   initialization level the same initial relative sensitivity. The last layer of
   the policy head starts at zero, so training starts from the decoder's nominal

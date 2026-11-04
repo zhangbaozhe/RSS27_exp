@@ -36,7 +36,11 @@ class Unicycle:
             pieces=pieces,
             head_state=p.Input("head"),
             tail_state=p.Input("tail"),
-            time=p.FixedTotalTime(total_duration=8.0, minimum_piece_duration=0.3),
+            time=p.AllocatedTime(
+                total=p.Input("total"),
+                fractions=p.FreeFractions(logit_penalty=0),
+                minimum_piece_duration=0.3,
+            ),
             waypoints=p.DirectWaypoints(),
         )
         car = p.Unicycle(track_width=self.track_width)
@@ -81,6 +85,7 @@ class Unicycle:
             sampling=p.Trapezoidal(intervals_per_piece=32),
             forward=p.LBFGS(
                 initial_guess=p.Input("initial"),
+                memory_size=8,
                 settings=p.OptimizerSettings(maximum_iterations=600, past=0),
             ),
             backward=p.ForwardOnly(),
@@ -99,6 +104,7 @@ class Unicycle:
             plan,
             plan.inputs(
                 head=head,
+                total=np.full(1, 8.0),
                 tail=tail,
                 corridor=corridor,
                 initial=plan.initial_guess(

@@ -29,7 +29,11 @@ def make_spec(pieces=p.DYNAMIC, intervals=p.DYNAMIC, *, constraints="hinge"):
         pieces=pieces,
         head_state=p.Input("head"),
         tail_state=p.Input("tail"),
-        time=p.FixedTotalTime(total_duration=4, minimum_piece_duration=0.1),
+        time=p.AllocatedTime(
+            total=p.Input("total"),
+            fractions=p.FreeFractions(logit_penalty=0),
+            minimum_piece_duration=0.1,
+        ),
         waypoints=p.DirectWaypoints(),
     )
     quadrotor = p.Quadrotor()
@@ -134,7 +138,10 @@ def make_spec(pieces=p.DYNAMIC, intervals=p.DYNAMIC, *, constraints="hinge"):
                 constraints,
             ),
         ),
-        forward=p.BFGS(initial_guess=p.Input("initial")),
+        forward=p.BFGS(
+            initial_guess=p.Input("initial"),
+            settings=p.OptimizerSettings(past=3, maximum_iterations=500),
+        ),
         backward=p.ForwardOnly(),
     )
 
@@ -158,6 +165,7 @@ def make_data(pieces, faces):
             halfspaces[..., face, 0] = 1
             halfspaces[..., face, 3] = -10 - face
     return dict(
+        total=np.full(1, 4.0),
         head=head,
         tail=tail,
         corridor=halfspaces,

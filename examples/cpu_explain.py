@@ -47,8 +47,18 @@ def make_spec(*, constraints="hinge") -> p.ProblemSpec:
                 constraints,
             ),
         ),
-        forward=p.BFGS(initial_guess=p.Input("initial")),
-        backward=p.Implicit(),
+        forward=p.BFGS(
+            initial_guess=p.Input("initial"),
+            settings=p.OptimizerSettings(past=3, maximum_iterations=500),
+        ),
+        backward=p.Implicit(
+            checks=p.BackwardChecks(
+                stationarity_tolerance=1e-2,
+                hessian_symmetry_tolerance=1e-6,
+                hessian_pivot_tolerance=1e-14,
+                adjoint_residual_tolerance=1e-6,
+            )
+        ),
     )
 
 

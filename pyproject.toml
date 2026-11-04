@@ -26,7 +26,7 @@ build-constraint-dependencies = [
 ]
 
 [tool.uv.sources]
-pivopt = { git = "ssh://git@github.com/zhangbaozhe/pivopt.git", rev = "94f7c1cd249d4c4fd1d3d64423971e8c786f551a" }
+pivopt = { git = "ssh://git@github.com/zhangbaozhe/pivopt.git", rev = "016541046c7fd8224b056cc17b5d8d6c1f6f47a0" }
 torch = [
   { index = "pytorch-cpu", marker = "sys_platform == 'linux' and platform_machine == 'x86_64'" },
 ]
