@@ -1,5 +1,5 @@
 # Keep this version aligned with pyproject.toml and the pre-commit hook.
-required-version = "==0.17.2"
+required-version = ">=0.17.2,<0.18"
 target-version = "py312"
 line-length = 88
 indent-width = 4
